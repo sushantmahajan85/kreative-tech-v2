@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-cream: #F7F4EE;
+  --color-cream-dark: #EDE9E0;
+  --color-ink: #141414;
+  --color-ink-60: #5A5A5A;
+  --color-ink-30: #B0ACA5;
+  --color-accent: #E8561A;
+  --color-accent-light: #FDF0E8;
+  --color-accent-dark: #C44010;
+  --color-green: #1A7A4A;
+  --color-green-bg: #EBF5EF;
+  --color-border: rgba(20,20,20,0.1);
+  --color-border-strong: rgba(20,20,20,0.18);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #F7F4EE;
+  color: #141414;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
+
+/* Bar grow animation for hero card */
+@keyframes barGrow {
+  from { width: 0; }
+}
+
+.bar-grow {
+  animation: barGrow 1.4s ease forwards;
+}
+.bar-grow-delay {
+  animation: barGrow 1.6s ease forwards;
+}
+.bar-grow-delay2 {
+  animation: barGrow 1.8s ease forwards;
+}
+
+/* Hero fade-up stagger */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.hero-animate > * {
+  animation: fadeUp 0.7s ease forwards;
+  opacity: 0;
+}
+.hero-animate > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-animate > *:nth-child(2) { animation-delay: 0.15s; }
+.hero-animate > *:nth-child(3) { animation-delay: 0.25s; }
+.hero-animate > *:nth-child(4) { animation-delay: 0.35s; }
+.hero-animate > *:nth-child(5) { animation-delay: 0.45s; }
+
+/* WhatsApp pulse — subtle */
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.35); }
+  50%       { box-shadow: 0 4px 28px rgba(37,211,102,0.6);  }
+}
+.wa-pulse {
+  animation: waPulse 2.5s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F7F4EE; }
+::-webkit-scrollbar-thumb { background: rgba(20,20,20,0.2); border-radius: 3px; }
