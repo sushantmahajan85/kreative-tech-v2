@@ -11,11 +11,11 @@ const syne = { fontFamily: "var(--font-syne)" };
 
 const portfolio = [
   { title: "Mprofy Platform", desc: "Web3 platform for managing DAOs, communities, and reward systems.", image: "/images/morphy.png", tag: "Web App", link: "https://mprofy.com/" },
-  { title: "Grabzy Platform", desc: "Feature-rich web application with real-time data updates and a modern dashboard UI.", image: "/images/grabzy.JPG", tag: "Web App", link: "#" },
-  { title: "LocalMention SaaS", desc: "Review management SaaS with analytics dashboard and automated response workflows.", image: "/images/localmention.JPG", tag: "SaaS", link: "#" },
-  { title: "Booking & Reservation Platform", desc: "Multi-vendor booking platform with calendar, payments, and automated reminders.", color: "#1A3A5C", tag: "Web App" },
-  { title: "B2B Wholesale Portal", desc: "Wholesale ordering portal with tiered pricing, invoice generation, and GST reports.", color: "#1E3A2F", tag: "B2B Portal" },
-  { title: "Healthcare Dashboard", desc: "Patient management system with appointment scheduling, prescription tracking, and billing.", color: "#2D1B4A", tag: "HealthTech" },
+  { title: "Grabzy Platform", desc: "Feature-rich web application with real-time data updates and a modern dashboard UI.", image: "/images/grabzy.JPG", tag: "Web App", color: "#1C1C2E", link: "#" },
+  { title: "LocalMention SaaS", desc: "Review management SaaS with analytics dashboard and automated response workflows.", image: "/images/localmention.JPG", tag: "SaaS", color: "#0D2137", link: "#" },
+  { title: "Zimyo HR Platform", desc: "HR & payroll SaaS for Indian SMBs — onboarding, attendance, leaves, and salary processing.", color: "#1A2F5C", tag: "HR SaaS", link: "https://zimyo.com" },
+  { title: "Yocket Study Abroad", desc: "Study abroad platform with university search, profile builder, and application tracker.", color: "#2A1A5C", tag: "EdTech Platform", link: "https://yocket.com" },
+  { title: "Leegality Docs", desc: "Digital document signing and workflow automation SaaS for Indian businesses and legal teams.", color: "#0A3A3A", tag: "LegalTech", link: "https://www.leegality.com" },
 ];
 
 const features = [
@@ -33,15 +33,18 @@ export default function WebDevPage() {
       <Navbar />
 
       <section className="pt-16 bg-[#F7F4EE]">
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 py-20 md:py-28">
-          <FadeUp className="max-w-3xl">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8 py-14 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <FadeUp>
+            <div className="inline-flex items-center gap-2 bg-[#EBF5EF] text-[#1A7A4A] rounded-full px-4 py-1.5 text-xs font-semibold mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1A7A4A]" /> React, Next.js & WordPress Experts
+            </div>
             <h1 className="text-[clamp(36px,5vw,56px)] font-extrabold leading-[1.1] tracking-[-1.5px] text-[#141414] mb-5" style={syne}>
               Websites That <em className="not-italic text-[#E8561A]">Win Clients</em>
             </h1>
             <p className="text-lg text-[#5A5A5A] font-light leading-[1.75] mb-8 max-w-2xl">
               Custom web development for MSMEs, startups, and enterprises. Fast, SEO-optimised, and built to generate leads for your business.
             </p>
-            <div className="flex flex-wrap gap-4 mb-10">
+            <div className="flex flex-wrap gap-4 mb-8">
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-[#E8561A] hover:bg-[#C44010] text-white font-semibold px-7 py-3.5 rounded-full transition-all hover:-translate-y-0.5">
                 Get a Free Quote →
@@ -50,13 +53,34 @@ export default function WebDevPage() {
                 See Portfolio
               </Link>
             </div>
-            <div className="flex flex-wrap gap-6">
-              {[["₹20,000+", "Starting Price"], ["2–4 Weeks", "Delivery Time"], ["50+", "Websites Built"], ["5+", "Years Experience"]].map(([val, lbl]) => (
-                <div key={lbl}>
-                  <div className="text-xl font-extrabold text-[#141414]" style={syne}>{val}</div>
-                  <div className="text-xs text-[#5A5A5A]">{lbl}</div>
+            <div className="flex flex-wrap items-center">
+              {[["₹20,000+", "Starting Price"], ["2–4 Weeks", "Delivery"], ["50+", "Sites Built"], ["5+", "Years Exp."]].map(([val, lbl], i) => (
+                <div key={lbl} className="flex items-center">
+                  {i > 0 && <div className="w-px h-7 bg-[rgba(20,20,20,0.12)] mx-4" />}
+                  <div>
+                    <div className="text-lg font-extrabold text-[#141414] leading-none" style={syne}>{val}</div>
+                    <div className="text-xs text-[#5A5A5A] mt-0.5">{lbl}</div>
+                  </div>
                 </div>
               ))}
+            </div>
+          </FadeUp>
+
+          <FadeUp delay={0.1}>
+            <div className="relative w-full aspect-video bg-[#141414] rounded-2xl overflow-hidden cursor-pointer group"
+              onClick={(e) => {
+                (e.currentTarget as HTMLElement).innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_WEBDEV_VIDEO_ID?autoplay=1" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;inset:0;border-radius:16px;width:100%;height:100%;"></iframe>`;
+              }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-[rgba(232,86,26,0.5)] to-[rgba(20,20,20,0.78)] flex flex-col items-center justify-center gap-3 group-hover:opacity-90 transition-opacity">
+                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-200">
+                  <div style={{ width: 0, height: 0, borderStyle: "solid", borderWidth: "10px 0 10px 18px", borderColor: "transparent transparent transparent #E8561A", marginLeft: 3 }} />
+                </div>
+                <div className="text-center">
+                  <div className="text-white font-semibold text-sm">Website Build — Design to Deployment</div>
+                  <div className="text-white/60 text-xs mt-1">Full development walkthrough</div>
+                </div>
+              </div>
+              <div className="absolute top-3 left-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-2.5 py-1 rounded-full">▶ Watch Now</div>
             </div>
           </FadeUp>
         </div>
@@ -82,31 +106,6 @@ export default function WebDevPage() {
         </div>
       </section>
 
-      {/* Video */}
-      <section className="py-20 bg-[#F7F4EE]">
-        <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
-          <FadeUp>
-            <span className="text-xs font-semibold text-[#E8561A] uppercase tracking-widest block mb-3">See It In Action</span>
-            <h2 className="text-[clamp(24px,2.8vw,34px)] font-bold text-[#141414] tracking-[-0.8px] mb-8" style={syne}>Watch How We Build a Business Website</h2>
-            <div className="relative w-full aspect-video bg-[#141414] rounded-2xl overflow-hidden cursor-pointer group"
-              onClick={(e) => {
-                (e.currentTarget as HTMLElement).innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_WEBDEV_VIDEO_ID?autoplay=1" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;inset:0;border-radius:16px;width:100%;height:100%"></iframe>`;
-              }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-[rgba(232,86,26,0.5)] to-[rgba(20,20,20,0.7)] flex items-center justify-center group-hover:opacity-90 transition-opacity">
-                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-200">
-                  <div style={{ width: 0, height: 0, borderStyle: "solid", borderWidth: "10px 0 10px 18px", borderColor: "transparent transparent transparent #E8561A", marginLeft: 3 }} />
-                </div>
-              </div>
-              <div className="absolute bottom-5 left-5 bg-[rgba(255,255,255,0.12)] backdrop-blur-sm border border-[rgba(255,255,255,0.2)] rounded-xl px-4 py-2.5 text-white text-left">
-                <div className="text-sm font-semibold">Mprofy Platform — Design to Deployment</div>
-                <div className="text-xs opacity-70 mt-0.5">Full build walkthrough</div>
-              </div>
-            </div>
-            <p className="text-sm text-[#5A5A5A] mt-4 font-light">Replace with your own web project video</p>
-          </FadeUp>
-        </div>
-      </section>
-
       {/* Portfolio */}
       <section className="py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
@@ -117,33 +116,19 @@ export default function WebDevPage() {
           <FadeUpGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {portfolio.map((p) => (
               <FadeItem key={p.title}>
-                {(p.link && p.link !== "#") ? (
-                  <a href={p.link} target="_blank" rel="noopener noreferrer"
-                    className="group block bg-[#F7F4EE] border border-[rgba(20,20,20,0.08)] rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(20,20,20,0.1)] transition-all duration-300 h-full">
-                    <div className="relative h-48" style={{ background: "#EDE9E0" }}>
-                      {p.image && <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />}
-                      <div className="absolute top-3 left-3 bg-[rgba(255,255,255,0.15)] backdrop-blur-sm border border-[rgba(255,255,255,0.2)] text-white text-xs font-semibold px-2.5 py-1 rounded-full">{p.tag}</div>
-                    </div>
-                    <div className="p-5">
-                      <h3 className="font-bold text-[#141414] mb-1" style={syne}>{p.title}</h3>
-                      <p className="text-sm text-[#5A5A5A] font-light">{p.desc}</p>
-                      <div className="flex items-center gap-1 mt-3 text-xs font-semibold text-[#E8561A]">View live site →</div>
-                    </div>
-                  </a>
-                ) : (
-                  <div className="bg-[#F7F4EE] border border-[rgba(20,20,20,0.08)] rounded-2xl overflow-hidden h-full">
-                    <div className="relative h-48" style={{ background: p.color ?? "#EDE9E0" }}>
-                      {p.image && <Image src={p.image} alt={p.title} fill className="object-cover" unoptimized />}
-                      {!p.image && <div className="absolute inset-0 flex items-center justify-center text-3xl font-extrabold text-white/15" style={syne}>{p.title.split(" ")[0].toUpperCase()}</div>}
-                      <div className="absolute top-3 left-3 bg-[rgba(255,255,255,0.15)] backdrop-blur-sm border border-[rgba(255,255,255,0.2)] text-white text-xs font-semibold px-2.5 py-1 rounded-full">{p.tag}</div>
-                      {!p.image && <div className="absolute top-3 right-3 bg-[rgba(20,20,20,0.4)] text-white/70 text-xs px-2.5 py-1 rounded-full">NDA</div>}
-                    </div>
-                    <div className="p-5">
-                      <h3 className="font-bold text-[#141414] mb-1" style={syne}>{p.title}</h3>
-                      <p className="text-sm text-[#5A5A5A] font-light">{p.desc}</p>
-                    </div>
+                <a href={p.link && p.link !== "#" ? p.link : "#"} target={p.link && p.link !== "#" ? "_blank" : "_self"} rel="noopener noreferrer"
+                  className="group block bg-[#F7F4EE] border border-[rgba(20,20,20,0.08)] rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(20,20,20,0.1)] transition-all duration-300 h-full">
+                  <div className="relative h-48 flex items-center justify-center overflow-hidden" style={{ background: p.color ?? "#EDE9E0" }}>
+                    {p.image && <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />}
+                    {!p.image && <span className="text-4xl font-extrabold text-white/20 tracking-tight" style={syne}>{p.title.split(" ")[0].toUpperCase()}</span>}
+                    <div className="absolute top-3 left-3 bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-2.5 py-1 rounded-full">{p.tag}</div>
                   </div>
-                )}
+                  <div className="p-5">
+                    <h3 className="font-bold text-[#141414] mb-1" style={syne}>{p.title}</h3>
+                    <p className="text-sm text-[#5A5A5A] font-light">{p.desc}</p>
+                    {p.link && p.link !== "#" && <div className="flex items-center gap-1 mt-3 text-xs font-semibold text-[#E8561A] group-hover:gap-2 transition-all">View live site →</div>}
+                  </div>
+                </a>
               </FadeItem>
             ))}
           </FadeUpGroup>

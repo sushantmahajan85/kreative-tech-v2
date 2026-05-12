@@ -49,7 +49,7 @@ export default function RootLayout({
     <html lang="en" className={`${syne.variable} ${dmSans.variable}`}
       style={{ fontFamily: "var(--font-dm-sans), 'DM Sans', system-ui, sans-serif" }}>
       <head>
-        <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="theme-color" content="#E8561A" />
         <script
           type="application/ld+json"
@@ -62,7 +62,7 @@ export default function RootLayout({
                 "Website design, app development, Shopify stores and digital solutions for MSMEs and small businesses in India.",
               url: "https://kreativetech.in",
               telephone: "+918551944773",
-              email: "sushant.work85@gmail.com",
+              email: "connect@kreativetech.in",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Delhi",
@@ -77,7 +77,7 @@ export default function RootLayout({
                 reviewCount: "50",
               },
               sameAs: [
-                "https://www.linkedin.com/in/sushant-mahajan-3933b5184/",
+                "https://www.linkedin.com/company/kreative-tech-official/?viewAsMember=true",
               ],
             }),
           }}

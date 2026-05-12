@@ -56,10 +56,10 @@ function IGReview({ handle, message }: { handle: string; message: string }) {
 const portfolio = [
   { title: "Kathmandu Outdoor", desc: "Full adventure gear store — custom filters, Indian payments, pan-India shipping.", image: "/images/kathMandu.png", tag: "Shopify", link: "https://www.kathmanduoutdoor.com/" },
   { title: "Stealtho Store", desc: "Premium sneaker marketplace with lookbook pages and WhatsApp checkout.", image: "/images/steathoStore.png", tag: "Shopify", link: "https://stealtho.store/" },
-  { title: "D2C Fashion Brand", desc: "Custom-designed clothing store with size guide, Instagram shop sync, and COD flow.", color: "#1C1C2E", tag: "Shopify" },
-  { title: "Handmade Jewellery Store", desc: "Artisan jewellery store with gifting flows, bulk orders, and WhatsApp order notifications.", color: "#2D1B0E", tag: "Shopify" },
-  { title: "Organic Food & FMCG", desc: "FMCG subscription store with recurring orders, UPI payments, and loyalty points.", color: "#1E3A2F", tag: "Shopify" },
-  { title: "Home Decor Brand", desc: "Interior decor store with room visualiser mockups, room bundles, and Razorpay split-pay.", color: "#1A0D2E", tag: "Shopify" },
+  { title: "Giva Jewellery", desc: "D2C silver jewellery brand — clean editorial design with Instagram ad integration and fast checkout.", color: "#8B7355", tag: "Jewellery", link: "https://www.giva.co" },
+  { title: "Zariin Handcrafted", desc: "Artisan gold-dipped jewellery store with story-driven product pages and gifting collections.", color: "#5C4A1E", tag: "Jewellery", link: "https://zariin.com" },
+  { title: "Bombay Trousseau", desc: "Indian bridal and occasion wear brand with editorial lookbooks and festive campaign pages.", color: "#5C1A28", tag: "Fashion", link: "https://www.bombaytrousseau.com" },
+  { title: "The Indus Valley", desc: "Clean-ingredient Ayurvedic personal care brand with subscription products and content marketing.", color: "#3D2B1F", tag: "Wellness", link: "https://www.theindusvalley.in" },
 ];
 
 const features = [
@@ -78,8 +78,8 @@ export default function ShopifyPage() {
 
       {/* Hero */}
       <section className="pt-16 bg-[#F7F4EE]">
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 py-20 md:py-28">
-          <FadeUp className="max-w-3xl">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8 py-14 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <FadeUp>
             <div className="inline-flex items-center gap-2 bg-[#EBF5EF] text-[#1A7A4A] rounded-full px-4 py-1.5 text-xs font-semibold mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#1A7A4A]" /> Most Popular Service
             </div>
@@ -89,7 +89,7 @@ export default function ShopifyPage() {
             <p className="text-lg text-[#5A5A5A] font-light leading-[1.75] mb-8 max-w-2xl">
               We build custom Shopify stores for Indian D2C brands and e-commerce businesses. Not templates — fully custom, conversion-optimised, with Indian payment gateways built in.
             </p>
-            <div className="flex flex-wrap gap-4 mb-10">
+            <div className="flex flex-wrap gap-4 mb-8">
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-[#E8561A] hover:bg-[#C44010] text-white font-semibold px-7 py-3.5 rounded-full transition-all hover:-translate-y-0.5">
                 Get a Free Quote →
@@ -98,13 +98,34 @@ export default function ShopifyPage() {
                 See Portfolio
               </Link>
             </div>
-            <div className="flex flex-wrap gap-6">
-              {[["₹25,000+", "Starting Price"], ["7–14 Days", "Delivery Time"], ["50+", "Stores Built"], ["100%", "Client Satisfaction"]].map(([val, lbl]) => (
-                <div key={lbl}>
-                  <div className="text-xl font-extrabold text-[#141414]" style={syne}>{val}</div>
-                  <div className="text-xs text-[#5A5A5A]">{lbl}</div>
+            <div className="flex flex-wrap items-center">
+              {[["₹25,000+", "Starting Price"], ["7–14 Days", "Delivery"], ["50+", "Stores Built"], ["100%", "Satisfaction"]].map(([val, lbl], i) => (
+                <div key={lbl} className="flex items-center">
+                  {i > 0 && <div className="w-px h-7 bg-[rgba(20,20,20,0.12)] mx-4" />}
+                  <div>
+                    <div className="text-lg font-extrabold text-[#141414] leading-none" style={syne}>{val}</div>
+                    <div className="text-xs text-[#5A5A5A] mt-0.5">{lbl}</div>
+                  </div>
                 </div>
               ))}
+            </div>
+          </FadeUp>
+
+          <FadeUp delay={0.1}>
+            <div className="relative w-full aspect-video bg-[#141414] rounded-2xl overflow-hidden cursor-pointer group"
+              onClick={(e) => {
+                (e.currentTarget as HTMLElement).innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_SHOPIFY_VIDEO_ID?autoplay=1" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;inset:0;border-radius:16px;width:100%;height:100%;"></iframe>`;
+              }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-[rgba(232,86,26,0.5)] to-[rgba(20,20,20,0.78)] flex flex-col items-center justify-center gap-3 group-hover:opacity-90 transition-opacity">
+                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-200">
+                  <div style={{ width: 0, height: 0, borderStyle: "solid", borderWidth: "10px 0 10px 18px", borderColor: "transparent transparent transparent #E8561A", marginLeft: 3 }} />
+                </div>
+                <div className="text-center">
+                  <div className="text-white font-semibold text-sm">Shopify Store — Full Build Walkthrough</div>
+                  <div className="text-white/60 text-xs mt-1">From design to first sale in 10 days</div>
+                </div>
+              </div>
+              <div className="absolute top-3 left-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-2.5 py-1 rounded-full">▶ Watch Now</div>
             </div>
           </FadeUp>
         </div>
@@ -131,31 +152,6 @@ export default function ShopifyPage() {
         </div>
       </section>
 
-      {/* Video placeholder */}
-      <section className="py-20 bg-[#F7F4EE]">
-        <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
-          <FadeUp>
-            <span className="text-xs font-semibold text-[#E8561A] uppercase tracking-widest block mb-3">See It In Action</span>
-            <h2 className="text-[clamp(24px,2.8vw,34px)] font-bold text-[#141414] tracking-[-0.8px] mb-8" style={syne}>Watch How We Built a Shopify Store</h2>
-            <div className="relative w-full aspect-video bg-[#141414] rounded-2xl overflow-hidden cursor-pointer group"
-              onClick={(e) => {
-                (e.currentTarget as HTMLElement).innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_SHOPIFY_VIDEO_ID?autoplay=1" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;inset:0;border-radius:16px;width:100%;height:100%"></iframe>`;
-              }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-[rgba(232,86,26,0.5)] to-[rgba(20,20,20,0.7)] flex items-center justify-center group-hover:opacity-90 transition-opacity">
-                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-200">
-                  <div style={{ width: 0, height: 0, borderStyle: "solid", borderWidth: "10px 0 10px 18px", borderColor: "transparent transparent transparent #E8561A", marginLeft: 3 }} />
-                </div>
-              </div>
-              <div className="absolute bottom-5 left-5 bg-[rgba(255,255,255,0.12)] backdrop-blur-sm border border-[rgba(255,255,255,0.2)] rounded-xl px-4 py-2.5 text-white text-left">
-                <div className="text-sm font-semibold">Stealtho Store — Full Build Walkthrough</div>
-                <div className="text-xs opacity-70 mt-0.5">From design to launch in 10 days</div>
-              </div>
-            </div>
-            <p className="text-sm text-[#5A5A5A] mt-4 font-light">Replace this with your own Shopify project walkthrough video</p>
-          </FadeUp>
-        </div>
-      </section>
-
       {/* Portfolio */}
       <section className="py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
@@ -166,33 +162,19 @@ export default function ShopifyPage() {
           <FadeUpGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {portfolio.map((p) => (
               <FadeItem key={p.title}>
-                {p.link ? (
-                  <a href={p.link} target="_blank" rel="noopener noreferrer"
-                    className="group block bg-[#F7F4EE] border border-[rgba(20,20,20,0.08)] rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(20,20,20,0.1)] transition-all duration-300 h-full">
-                    <div className="relative h-48" style={{ background: p.color ?? "#EDE9E0" }}>
-                      {p.image && <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />}
-                      {!p.image && <div className="absolute inset-0 flex items-center justify-center text-2xl font-extrabold text-white/20" style={syne}>{p.title.split(" ")[0].toUpperCase()}</div>}
-                      <div className="absolute top-3 left-3 bg-[rgba(255,255,255,0.15)] backdrop-blur-sm border border-[rgba(255,255,255,0.2)] text-white text-xs font-semibold px-2.5 py-1 rounded-full">{p.tag}</div>
-                    </div>
-                    <div className="p-5">
-                      <h3 className="font-bold text-[#141414] mb-1" style={syne}>{p.title}</h3>
-                      <p className="text-sm text-[#5A5A5A] font-light leading-relaxed">{p.desc}</p>
-                      <div className="flex items-center gap-1 mt-3 text-xs font-semibold text-[#E8561A]">View live site <span>→</span></div>
-                    </div>
-                  </a>
-                ) : (
-                  <div className="bg-[#F7F4EE] border border-[rgba(20,20,20,0.08)] rounded-2xl overflow-hidden h-full">
-                    <div className="relative h-48 flex items-center justify-center" style={{ background: p.color }}>
-                      <div className="text-3xl font-extrabold text-white/15" style={syne}>{p.title.split(" ")[0].toUpperCase()}</div>
-                      <div className="absolute top-3 left-3 bg-[rgba(255,255,255,0.15)] backdrop-blur-sm border border-[rgba(255,255,255,0.2)] text-white text-xs font-semibold px-2.5 py-1 rounded-full">{p.tag}</div>
-                      <div className="absolute top-3 right-3 bg-[rgba(20,20,20,0.4)] text-white/70 text-xs px-2.5 py-1 rounded-full">Client Privacy</div>
-                    </div>
-                    <div className="p-5">
-                      <h3 className="font-bold text-[#141414] mb-1" style={syne}>{p.title}</h3>
-                      <p className="text-sm text-[#5A5A5A] font-light leading-relaxed">{p.desc}</p>
-                    </div>
+                <a href={p.link ?? "#"} target="_blank" rel="noopener noreferrer"
+                  className="group block bg-[#F7F4EE] border border-[rgba(20,20,20,0.08)] rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(20,20,20,0.1)] transition-all duration-300 h-full">
+                  <div className="relative h-48 flex items-center justify-center overflow-hidden" style={{ background: p.color ?? "#EDE9E0" }}>
+                    {p.image && <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />}
+                    {!p.image && <span className="text-4xl font-extrabold text-white/20 tracking-tight" style={syne}>{p.title.split(" ")[0].toUpperCase()}</span>}
+                    <div className="absolute top-3 left-3 bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-2.5 py-1 rounded-full">{p.tag}</div>
                   </div>
-                )}
+                  <div className="p-5">
+                    <h3 className="font-bold text-[#141414] mb-1" style={syne}>{p.title}</h3>
+                    <p className="text-sm text-[#5A5A5A] font-light leading-relaxed">{p.desc}</p>
+                    <div className="flex items-center gap-1 mt-3 text-xs font-semibold text-[#E8561A] group-hover:gap-2 transition-all">View live site →</div>
+                  </div>
+                </a>
               </FadeItem>
             ))}
           </FadeUpGroup>

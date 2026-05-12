@@ -54,10 +54,18 @@ const faqs = [
 ];
 
 const techStack = [
-  { icon: "⚛️", name: "React JS" }, { icon: "📱", name: "Flutter" }, { icon: "🟩", name: "Node.JS" },
-  { icon: "🐍", name: "Python" }, { icon: "🛍️", name: "Shopify" }, { icon: "☁️", name: "AWS" },
-  { icon: "🔥", name: "Firebase" }, { icon: "🗄️", name: "MySQL" }, { icon: "🍃", name: "MongoDB" },
-  { icon: "🎨", name: "Figma" }, { icon: "🟣", name: "WordPress" }, { icon: "🔷", name: "TypeScript" },
+  { logo: "https://cdn.simpleicons.org/react/61DAFB", name: "React JS" },
+  { logo: "https://cdn.simpleicons.org/flutter/02569B", name: "Flutter" },
+  { logo: "https://cdn.simpleicons.org/nodedotjs/339933", name: "Node.JS" },
+  { logo: "https://cdn.simpleicons.org/python/3776AB", name: "Python" },
+  { logo: "https://cdn.simpleicons.org/shopify/7AB55C", name: "Shopify" },
+  { logo: "https://cdn.simpleicons.org/amazonaws/FF9900", name: "AWS" },
+  { logo: "https://cdn.simpleicons.org/firebase/FFCA28", name: "Firebase" },
+  { logo: "https://cdn.simpleicons.org/mysql/4479A1", name: "MySQL" },
+  { logo: "https://cdn.simpleicons.org/mongodb/47A248", name: "MongoDB" },
+  { logo: "https://cdn.simpleicons.org/figma/F24E1E", name: "Figma" },
+  { logo: "https://cdn.simpleicons.org/wordpress/21759B", name: "WordPress" },
+  { logo: "https://cdn.simpleicons.org/typescript/3178C6", name: "TypeScript" },
 ];
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -76,7 +84,7 @@ export default function HomePage() {
         from_email: formData.email,
         from_number: formData.phone,
         message: `Service: ${formData.service}\n\n${formData.message}`,
-        to_email: "sushant.work85@gmail.com",
+        to_email: "connect@kreativetech.in",
       }, "pz-2-lSUbcctexn6-");
       setFormSent(true);
     } catch {
@@ -91,7 +99,7 @@ export default function HomePage() {
 
       {/* ── HERO ── */}
       <section className="pt-16" aria-labelledby="hero-heading">
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 py-20 md:py-28 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8 pt-10 pb-12 md:pt-14 md:pb-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <div className="hero-animate">
             {/* Badge */}
@@ -123,77 +131,56 @@ export default function HomePage() {
             </div>
 
             {/* Trust stats */}
-            <div className="flex flex-wrap items-center gap-6">
+            <div className="flex flex-wrap items-center">
               {[
                 { num: "5+", label: "Years in Business" },
                 { num: "80+", label: "Projects Delivered" },
                 { num: "50+", label: "Happy Clients" },
                 { num: "4.9★", label: "Client Rating" },
               ].map((s, i) => (
-                <div key={s.label}>
-                  {i > 0 && <span className="hidden sm:inline-block w-px h-8 bg-[rgba(20,20,20,0.15)] mr-6" />}
-                  <div className="text-2xl font-extrabold text-[#141414] leading-none" style={syne}>{s.num}</div>
-                  <div className="text-xs text-[#5A5A5A] mt-1">{s.label}</div>
+                <div key={s.label} className="flex items-center">
+                  {i > 0 && <div className="w-px h-7 bg-[rgba(20,20,20,0.12)] mx-5" />}
+                  <div>
+                    <div className="text-2xl font-extrabold text-[#141414] leading-none" style={syne}>{s.num}</div>
+                    <div className="text-xs text-[#5A5A5A] mt-1">{s.label}</div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right — dashboard card */}
-          <div className="hidden lg:block relative" aria-hidden="true">
-            <div className="bg-white rounded-2xl border border-[rgba(20,20,20,0.1)] p-7 shadow-[0_20px_60px_rgba(20,20,20,0.08)]">
-              <div className="flex items-center justify-between mb-6">
-                <span className="font-bold text-base text-[#141414]" style={syne}>Project Dashboard</span>
-                <span className="flex items-center gap-1.5 bg-[#EBF5EF] text-[#1A7A4A] text-xs font-semibold px-3 py-1 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1A7A4A]" /> Live
-                </span>
-              </div>
-              {[
-                { label: "Web Development", pct: 92, cls: "bar-grow" },
-                { label: "App Development", pct: 85, color: "#1A7A4A", cls: "bar-grow-delay" },
-                { label: "Client Satisfaction", pct: 98, color: "#1A4EE8", cls: "bar-grow-delay2" },
-              ].map((bar) => (
-                <div key={bar.label} className="mb-4">
-                  <div className="flex justify-between text-xs text-[#5A5A5A] mb-1.5">
-                    <span>{bar.label}</span><span>{bar.pct}%</span>
+          {/* Right — video */}
+          <FadeUp delay={0.1}>
+            <div className="relative">
+              <div className="relative w-full aspect-video bg-[#141414] rounded-2xl overflow-hidden cursor-pointer group"
+                onClick={(e) => {
+                  (e.currentTarget as HTMLElement).innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;inset:0;border-radius:16px;width:100%;height:100%;"></iframe>`;
+                }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-[rgba(232,86,26,0.5)] to-[rgba(20,20,20,0.78)] flex flex-col items-center justify-center gap-3 group-hover:opacity-90 transition-opacity">
+                  <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-200">
+                    <div style={{ width: 0, height: 0, borderStyle: "solid", borderWidth: "10px 0 10px 18px", borderColor: "transparent transparent transparent #E8561A", marginLeft: 3 }} />
                   </div>
-                  <div className="h-1.5 bg-[#EDE9E0] rounded-full overflow-hidden">
-                    <div className={`h-full rounded-full ${bar.cls}`}
-                      style={{ width: `${bar.pct}%`, background: bar.color ?? "#E8561A" }} />
+                  <div className="text-center">
+                    <div className="text-white font-semibold text-sm">Watch Our Agency Showreel</div>
+                    <div className="text-white/60 text-xs mt-1">See what we build — 2 min</div>
                   </div>
                 </div>
-              ))}
-              <div className="flex justify-between items-center pt-4 mt-2 border-t border-[rgba(20,20,20,0.08)]">
-                <span className="text-sm text-[#5A5A5A]">On-time delivery</span>
-                <span className="text-xl font-extrabold text-[#1A7A4A]" style={syne}>100%</span>
+                <div className="absolute top-3 left-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-2.5 py-1 rounded-full">▶ Play Demo</div>
               </div>
-            </div>
-
-            {/* Floating card — top right */}
-            <div className="absolute -top-4 -right-4 bg-white border border-[rgba(20,20,20,0.1)] rounded-2xl px-4 py-3 shadow-lg flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#FDF0E8] flex items-center justify-center text-xl">🚀</div>
-              <div>
-                <div className="text-xs text-[#5A5A5A]">New project launched</div>
-                <div className="text-sm font-bold text-[#141414]" style={syne}>Mprofy Platform</div>
-              </div>
-            </div>
-
-            {/* Floating card — bottom left */}
-            <div className="absolute -bottom-4 -left-6 bg-white border border-[rgba(20,20,20,0.1)] rounded-2xl px-4 py-3 shadow-lg flex items-center gap-3">
-              <div className="flex -space-x-2">
-                {["#E8561A","#1A7A4A","#1A4EE8","#8B44E8"].map((c, i) => (
-                  <div key={i} className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-white text-[10px] font-bold"
-                    style={{ background: c }}>
-                    {["RG","JB","KM","+"][i]}
+              <div className="grid grid-cols-3 gap-3 mt-4">
+                {[
+                  { label: "5+", sub: "Years Exp." },
+                  { label: "80+", sub: "Projects" },
+                  { label: "4.9★", sub: "Rating" },
+                ].map((b) => (
+                  <div key={b.label} className="bg-white border border-[rgba(20,20,20,0.08)] rounded-xl p-3 text-center">
+                    <div className="font-extrabold text-[#141414] text-sm leading-none mb-1" style={syne}>{b.label}</div>
+                    <div className="text-[11px] text-[#5A5A5A]">{b.sub}</div>
                   </div>
                 ))}
               </div>
-              <div>
-                <div className="text-xs text-[#5A5A5A]">50+ satisfied clients</div>
-                <div className="text-sm font-bold text-[#141414]" style={syne}>Join them today</div>
-              </div>
             </div>
-          </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -211,28 +198,72 @@ export default function HomePage() {
       {/* ── ABOUT + VIDEO ── */}
       <section id="about" className="py-24 bg-[#F7F4EE]" aria-labelledby="about-heading">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Video */}
+          {/* Dashboard card */}
           <FadeUp>
             <div className="relative">
-              <div className="relative w-full aspect-video bg-[#141414] rounded-2xl overflow-hidden cursor-pointer group"
-                onClick={(e) => {
-                  const t = e.currentTarget;
-                  t.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;inset:0;border-radius:16px;"></iframe>`;
-                }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-[rgba(232,86,26,0.55)] to-[rgba(20,20,20,0.7)] flex items-center justify-center group-hover:opacity-90 transition-opacity">
-                  <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-200">
-                    <div style={{ width: 0, height: 0, borderStyle: "solid", borderWidth: "10px 0 10px 18px", borderColor: "transparent transparent transparent #E8561A", marginLeft: 3 }} />
+              {/* Main card */}
+              <div className="bg-[#141414] rounded-2xl p-6 shadow-2xl">
+                {/* Card header */}
+                <div className="flex items-center justify-between mb-5">
+                  <div>
+                    <div className="text-white font-bold text-sm" style={syne}>Project Dashboard</div>
+                    <div className="text-white/40 text-xs mt-0.5">Live overview · 2025</div>
+                  </div>
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
                   </div>
                 </div>
-                <div className="absolute bottom-5 left-5 bg-[rgba(255,255,255,0.12)] backdrop-blur-sm border border-[rgba(255,255,255,0.2)] rounded-xl px-4 py-2.5 text-white">
-                  <div className="text-sm font-semibold">Meet the Kreative Tech Team</div>
-                  <div className="text-xs opacity-70 mt-0.5">Watch 2-min intro video</div>
+                {/* Stat pills */}
+                <div className="grid grid-cols-3 gap-2.5 mb-5">
+                  {[
+                    { val: "80+", label: "Projects", color: "#E8561A" },
+                    { val: "50+", label: "Clients", color: "#1A7A4A" },
+                    { val: "4.9★", label: "Rating", color: "#1A4EE8" },
+                  ].map((s) => (
+                    <div key={s.label} className="bg-[rgba(255,255,255,0.07)] rounded-xl p-3 text-center">
+                      <div className="font-extrabold text-base leading-none mb-1" style={{ ...syne, color: s.color }}>{s.val}</div>
+                      <div className="text-[10px] text-white/40">{s.label}</div>
+                    </div>
+                  ))}
+                </div>
+                {/* Progress bars */}
+                <div className="space-y-3.5">
+                  {[
+                    { label: "Web Development", pct: 92, color: "#E8561A" },
+                    { label: "App Development", pct: 85, color: "#1A7A4A" },
+                    { label: "Shopify Stores", pct: 78, color: "#1A4EE8" },
+                    { label: "Landing Pages", pct: 95, color: "#8B44E8" },
+                  ].map((s) => (
+                    <div key={s.label}>
+                      <div className="flex justify-between text-[11px] mb-1.5">
+                        <span className="text-white/60">{s.label}</span>
+                        <span className="text-white/40">{s.pct}%</span>
+                      </div>
+                      <div className="h-1.5 bg-[rgba(255,255,255,0.08)] rounded-full overflow-hidden">
+                        <div className="h-full rounded-full" style={{ width: `${s.pct}%`, background: s.color }} />
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-              {/* Exp badge */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-[#E8561A] flex flex-col items-center justify-center text-white shadow-[0_8px_24px_rgba(232,86,26,0.35)]">
-                <span className="text-2xl font-extrabold leading-none" style={syne}>5+</span>
-                <span className="text-[9px] font-semibold tracking-wide mt-0.5 opacity-85">YRS EXP</span>
+              {/* Floating card — bottom right */}
+              <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl px-5 py-4 shadow-[0_12px_40px_rgba(20,20,20,0.15)] border border-[rgba(20,20,20,0.08)]">
+                <div className="text-2xl font-extrabold text-[#141414] leading-none mb-0.5" style={syne}>100%</div>
+                <div className="text-xs text-[#5A5A5A]">On-Time Delivery</div>
+              </div>
+              {/* Floating card — top right */}
+              <div className="absolute -top-5 -right-5 bg-[#EBF5EF] rounded-2xl px-4 py-3 shadow-[0_8px_32px_rgba(26,122,74,0.15)] border border-[rgba(26,122,74,0.15)]">
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-full bg-[#1A7A4A] flex items-center justify-center shrink-0">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-[#141414]">Project Delivered</div>
+                    <div className="text-[10px] text-[#5A5A5A]">Client approved ✓</div>
+                  </div>
+                </div>
               </div>
             </div>
           </FadeUp>
@@ -463,7 +494,7 @@ export default function HomePage() {
             {techStack.map((t) => (
               <FadeItem key={t.name}>
                 <div className="bg-white border border-[rgba(20,20,20,0.08)] hover:border-[#E8561A] hover:shadow-[0_4px_16px_rgba(232,86,26,0.12)] rounded-xl p-4 text-center transition-all duration-200 cursor-default">
-                  <span className="text-2xl mb-2 block">{t.icon}</span>
+                  <img src={t.logo} alt={t.name} width={32} height={32} className="mx-auto mb-2" />
                   <span className="text-xs font-medium text-[#5A5A5A]">{t.name}</span>
                 </div>
               </FadeItem>
@@ -535,7 +566,7 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-8 pt-8 border-t border-[rgba(255,255,255,0.08)]">
               {[
                 { label: "Phone", value: "+91 85519 44773", href: "tel:+918551944773" },
-                { label: "Email", value: "sushant.work85@gmail.com", href: "mailto:sushant.work85@gmail.com" },
+                { label: "Email", value: "connect@kreativetech.in", href: "mailto:connect@kreativetech.in" },
                 { label: "Location", value: "Delhi, India", href: undefined },
               ].map((c) => (
                 <div key={c.label}>
