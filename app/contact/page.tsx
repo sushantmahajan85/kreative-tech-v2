@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
 
 const WA_LINK =
-  "https://wa.me/918551944773?text=Hi%2C%20I%20am%20interested%20in%20your%20services.";
+  "https://wa.me/919082706169?text=Hi%2C%20I%20am%20interested%20in%20your%20services.";
 const syne = { fontFamily: "var(--font-syne)" };
 
 export default function ContactPage() {
@@ -39,7 +39,7 @@ export default function ContactPage() {
     } catch {
       const text = `Hi! I filled the contact form.\n\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\nService: ${form.service}\nMessage: ${form.message}`;
       window.open(
-        `https://wa.me/918551944773?text=${encodeURIComponent(text)}`,
+        `https://wa.me/919082706169?text=${encodeURIComponent(text)}`,
         "_blank"
       );
     }
@@ -94,7 +94,7 @@ export default function ContactPage() {
                       WhatsApp (Fastest)
                     </div>
                     <div className="text-sm text-[#1A7A4A] font-semibold">
-                      +91 85519 44773
+                      +91 90827 06169
                     </div>
                     <div className="text-xs text-[#5A5A5A] mt-0.5">
                       Usually replies in under 30 min
@@ -106,7 +106,7 @@ export default function ContactPage() {
               {/* Phone */}
               <FadeUp delay={0.05}>
                 <a
-                  href="tel:+918551944773"
+                  href="tel:+919082706169"
                   className="flex items-center gap-4 bg-[#F7F4EE] border border-[rgba(20,20,20,0.08)] rounded-2xl p-5 hover:shadow-md transition-shadow"
                 >
                   <div className="w-12 h-12 rounded-full bg-[#141414] flex items-center justify-center shrink-0">
@@ -128,7 +128,7 @@ export default function ContactPage() {
                     <div className="font-bold text-[#141414] text-sm" style={syne}>
                       Call Us
                     </div>
-                    <div className="text-sm text-[#5A5A5A]">+91 85519 44773</div>
+                    <div className="text-sm text-[#5A5A5A]">+91 90827 06169</div>
                     <div className="text-xs text-[#5A5A5A] mt-0.5">
                       Mon–Sat, 9am–8pm IST
                     </div>

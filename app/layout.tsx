@@ -61,7 +61,7 @@ export default function RootLayout({
               description:
                 "Website design, app development, Shopify stores and digital solutions for MSMEs and small businesses in India.",
               url: "https://kreativetech.in",
-              telephone: "+918551944773",
+              telephone: "+919082706169",
               email: "connect@kreativetech.in",
               address: {
                 "@type": "PostalAddress",

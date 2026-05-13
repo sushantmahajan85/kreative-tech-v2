@@ -1,7 +1,7 @@
 "use client";
 
 const WA_LINK =
-  "https://wa.me/918551944773?text=Hi%2C%20I%20am%20interested%20in%20your%20services.";
+  "https://wa.me/919082706169?text=Hi%2C%20I%20am%20interested%20in%20your%20services.";
 
 export default function WhatsAppButton() {
   return (

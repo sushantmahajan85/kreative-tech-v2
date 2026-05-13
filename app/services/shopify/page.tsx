@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
 
-const WA = "https://wa.me/918551944773?text=Hi%2C%20I%20want%20a%20Shopify%20store.%20Can%20you%20share%20a%20quote%3F";
+const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20want%20a%20Shopify%20store.%20Can%20you%20share%20a%20quote%3F";
 const syne = { fontFamily: "var(--font-syne)" };
 
 // WhatsApp screenshot–style testimonial

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 const WA_LINK =
-  "https://wa.me/918551944773?text=Hi%2C%20I%20just%20filled%20your%20contact%20form%20and%20wanted%20to%20follow%20up.";
+  "https://wa.me/919082706169?text=Hi%2C%20I%20just%20filled%20your%20contact%20form%20and%20wanted%20to%20follow%20up.";
 
 const syne = { fontFamily: "var(--font-syne)" };
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const WA_LINK =
-  "https://wa.me/918551944773?text=Hi%2C%20I%20am%20interested%20in%20your%20services.";
+  "https://wa.me/919082706169?text=Hi%2C%20I%20am%20interested%20in%20your%20services.";
 
 export default function Footer() {
   return (
@@ -43,11 +43,14 @@ export default function Footer() {
             <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-4">Services</h4>
             <ul className="space-y-3 list-none p-0 m-0">
               {[
-                { label: "Shopify Development", href: "/services/shopify/" },
-                { label: "App Development", href: "/services/app-development/" },
-                { label: "Landing Pages", href: "/services/landing-pages/" },
                 { label: "Web Development", href: "/services/web-development/" },
-                { label: "ERP Solutions", href: "/#services" },
+                { label: "App Development", href: "/services/app-development/" },
+                { label: "Shopify Stores", href: "/services/shopify/" },
+                { label: "Landing Pages", href: "/services/landing-pages/" },
+                { label: "ERP Solutions", href: "/services/erp/" },
+                { label: "Cloud & DevOps", href: "/services/cloud-devops/" },
+                { label: "UI/UX Design", href: "/services/ui-ux/" },
+                { label: "WhatsApp Bots", href: "/services/bots/" },
               ].map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-sm text-[rgba(255,255,255,0.45)] hover:text-white transition-colors">
@@ -83,8 +86,8 @@ export default function Footer() {
             <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-4">Contact</h4>
             <ul className="space-y-3 list-none p-0 m-0">
               <li>
-                <a href="tel:+918551944773" className="text-sm text-[rgba(255,255,255,0.45)] hover:text-white transition-colors">
-                  +91 85519 44773
+                <a href="tel:+919082706169" className="text-sm text-[rgba(255,255,255,0.45)] hover:text-white transition-colors">
+                  +91 90827 06169
                 </a>
               </li>
               <li>

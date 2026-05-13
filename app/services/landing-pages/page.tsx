@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
 
-const WA = "https://wa.me/918551944773?text=Hi%2C%20I%20need%20a%20landing%20page%20for%20my%20Instagram%20Ads.%20Can%20you%20help%3F";
+const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20need%20a%20landing%20page%20for%20my%20Instagram%20Ads.%20Can%20you%20help%3F";
 const syne = { fontFamily: "var(--font-syne)" };
 
 function WAReview({ name, role, message, time }: { name: string; role: string; message: string; time: string }) {

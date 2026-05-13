@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
 
-const WA = "https://wa.me/918551944773?text=Hi%2C%20I%20want%20to%20build%20a%20mobile%20app.%20Can%20you%20share%20a%20quote%3F";
+const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20want%20to%20build%20a%20mobile%20app.%20Can%20you%20share%20a%20quote%3F";
 const syne = { fontFamily: "var(--font-syne)" };
 
 function WAReview({ name, role, message, time }: { name: string; role: string; message: string; time: string }) {
@@ -92,7 +92,7 @@ export default function AppDevPage() {
               </Link>
             </div>
             <div className="flex flex-wrap items-center">
-              {[["₹60,000+", "Starting Price"], ["4–8 Weeks", "Delivery Time"], ["20+", "Apps Launched"], ["iOS + Android", "Both Platforms"]].map(([val, lbl], i) => (
+              {[["₹60,000+", "Starting Price"], ["4–8 Weeks", "Delivery Time"], ["20+", "Apps Launched"]].map(([val, lbl], i) => (
                 <div key={lbl} className="flex items-center">
                   {i > 0 && <div className="w-px h-7 bg-[rgba(20,20,20,0.12)] mx-4" />}
                   <div>

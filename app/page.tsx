@@ -6,9 +6,10 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
+import CountUp from "@/components/CountUp";
 
-const WA_LINK = "https://wa.me/918551944773?text=Hi%2C%20I%20am%20interested%20in%20your%20services.";
-const WA_QUOTE = "https://wa.me/918551944773?text=Hi%2C%20I%20want%20to%20discuss%20a%20project%20and%20get%20a%20quote.";
+const WA_LINK = "https://wa.me/919082706169?text=Hi%2C%20I%20am%20interested%20in%20your%20services.";
+const WA_QUOTE = "https://wa.me/919082706169?text=Hi%2C%20I%20want%20to%20discuss%20a%20project%20and%20get%20a%20quote.";
 
 const syne = { fontFamily: "var(--font-syne), 'Syne', system-ui, sans-serif" };
 
@@ -18,11 +19,11 @@ const services = [
   { icon: "🌐", title: "Website Design & Development", desc: "Mobile-first, SEO-optimised websites that load in under 2 seconds and convert visitors into leads.", href: "/services/web-development/" },
   { icon: "📱", title: "iOS & Android App Development", desc: "Custom mobile apps with Flutter or React Native. One codebase, both platforms, native performance.", href: "/services/app-development/" },
   { icon: "🛒", title: "Shopify E-commerce Stores", desc: "Complete Shopify stores with Indian payments, WhatsApp checkout, and conversion-focused design.", href: "/services/shopify/" },
-  { icon: "⚙️", title: "ERP & Business Software", desc: "Automate operations — inventory, HR, billing, and reports — in one custom system built for your workflow.", href: "/#contact" },
+  { icon: "⚙️", title: "ERP & Business Software", desc: "Automate operations — inventory, HR, billing, and reports — in one custom system built for your workflow.", href: "/services/erp/" },
   { icon: "🚀", title: "Landing Pages & Ad Funnels", desc: "High-converting landing pages built for Instagram/Google Ads. A/B tested, fast-loading, lead-capture ready.", href: "/services/landing-pages/" },
-  { icon: "☁️", title: "Cloud & DevOps", desc: "Scalable cloud infrastructure on AWS, GCP, or Azure. Setup, migration, monitoring, and cost optimisation.", href: "/#contact" },
-  { icon: "🎨", title: "UI/UX Design", desc: "User-centred design that looks stunning and converts. Wireframes, prototypes, and final design assets.", href: "/#contact" },
-  { icon: "🤖", title: "Telegram & WhatsApp Bots", desc: "Automate customer support, lead capture, and order notifications with intelligent messaging bots.", href: "/#contact" },
+  { icon: "☁️", title: "Cloud & DevOps", desc: "Scalable cloud infrastructure on AWS, GCP, or Azure. Setup, migration, monitoring, and cost optimisation.", href: "/services/cloud-devops/" },
+  { icon: "🎨", title: "UI/UX Design", desc: "User-centred design that looks stunning and converts. Wireframes, prototypes, and final design assets.", href: "/services/ui-ux/" },
+  { icon: "🤖", title: "Telegram & WhatsApp Bots", desc: "Automate customer support, lead capture, and order notifications with intelligent messaging bots.", href: "/services/bots/" },
 ];
 
 const portfolio = [
@@ -89,7 +90,7 @@ export default function HomePage() {
       setFormSent(true);
     } catch {
       const text = `Hi! I filled the contact form.\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nService: ${formData.service}\nMessage: ${formData.message}`;
-      window.open(`https://wa.me/918551944773?text=${encodeURIComponent(text)}`, "_blank");
+      window.open(`https://wa.me/919082706169?text=${encodeURIComponent(text)}`, "_blank");
     }
   };
 
@@ -133,15 +134,17 @@ export default function HomePage() {
             {/* Trust stats */}
             <div className="flex flex-wrap items-center">
               {[
-                { num: "5+", label: "Years in Business" },
-                { num: "80+", label: "Projects Delivered" },
-                { num: "50+", label: "Happy Clients" },
-                { num: "4.9★", label: "Client Rating" },
+                { to: 5, suffix: "+", label: "Years in Business" },
+                { to: 80, suffix: "+", label: "Projects Delivered" },
+                { to: 50, suffix: "+", label: "Happy Clients" },
+                { to: 4.9, suffix: "★", decimals: 1, label: "Client Rating" },
               ].map((s, i) => (
                 <div key={s.label} className="flex items-center">
                   {i > 0 && <div className="w-px h-7 bg-[rgba(20,20,20,0.12)] mx-5" />}
                   <div>
-                    <div className="text-2xl font-extrabold text-[#141414] leading-none" style={syne}>{s.num}</div>
+                    <div className="text-2xl font-extrabold text-[#141414] leading-none" style={syne}>
+                      <CountUp to={s.to} suffix={s.suffix} decimals={s.decimals ?? 0} />
+                    </div>
                     <div className="text-xs text-[#5A5A5A] mt-1">{s.label}</div>
                   </div>
                 </div>
@@ -169,12 +172,14 @@ export default function HomePage() {
               </div>
               <div className="grid grid-cols-3 gap-3 mt-4">
                 {[
-                  { label: "5+", sub: "Years Exp." },
-                  { label: "80+", sub: "Projects" },
-                  { label: "4.9★", sub: "Rating" },
+                  { to: 5, suffix: "+", decimals: 0, sub: "Years Exp." },
+                  { to: 80, suffix: "+", decimals: 0, sub: "Projects" },
+                  { to: 4.9, suffix: "★", decimals: 1, sub: "Rating" },
                 ].map((b) => (
-                  <div key={b.label} className="bg-white border border-[rgba(20,20,20,0.08)] rounded-xl p-3 text-center">
-                    <div className="font-extrabold text-[#141414] text-sm leading-none mb-1" style={syne}>{b.label}</div>
+                  <div key={b.sub} className="bg-white border border-[rgba(20,20,20,0.08)] rounded-xl p-3 text-center">
+                    <div className="font-extrabold text-[#141414] text-sm leading-none mb-1" style={syne}>
+                      <CountUp to={b.to} suffix={b.suffix} decimals={b.decimals} />
+                    </div>
                     <div className="text-[11px] text-[#5A5A5A]">{b.sub}</div>
                   </div>
                 ))}
@@ -218,12 +223,14 @@ export default function HomePage() {
                 {/* Stat pills */}
                 <div className="grid grid-cols-3 gap-2.5 mb-5">
                   {[
-                    { val: "80+", label: "Projects", color: "#E8561A" },
-                    { val: "50+", label: "Clients", color: "#1A7A4A" },
-                    { val: "4.9★", label: "Rating", color: "#1A4EE8" },
+                    { to: 80, suffix: "+", decimals: 0, label: "Projects", color: "#E8561A" },
+                    { to: 50, suffix: "+", decimals: 0, label: "Clients", color: "#1A7A4A" },
+                    { to: 4.9, suffix: "★", decimals: 1, label: "Rating", color: "#1A4EE8" },
                   ].map((s) => (
                     <div key={s.label} className="bg-[rgba(255,255,255,0.07)] rounded-xl p-3 text-center">
-                      <div className="font-extrabold text-base leading-none mb-1" style={{ ...syne, color: s.color }}>{s.val}</div>
+                      <div className="font-extrabold text-base leading-none mb-1" style={{ ...syne, color: s.color }}>
+                        <CountUp to={s.to} suffix={s.suffix} decimals={s.decimals} />
+                      </div>
                       <div className="text-[10px] text-white/40">{s.label}</div>
                     </div>
                   ))}
@@ -250,7 +257,7 @@ export default function HomePage() {
               </div>
               {/* Floating card — bottom right */}
               <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl px-5 py-4 shadow-[0_12px_40px_rgba(20,20,20,0.15)] border border-[rgba(20,20,20,0.08)]">
-                <div className="text-2xl font-extrabold text-[#141414] leading-none mb-0.5" style={syne}>100%</div>
+                <div className="text-2xl font-extrabold text-[#141414] leading-none mb-0.5" style={syne}><CountUp to={100} suffix="%" /></div>
                 <div className="text-xs text-[#5A5A5A]">On-Time Delivery</div>
               </div>
               {/* Floating card — top right */}
@@ -558,14 +565,14 @@ export default function HomePage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 WhatsApp Us Now
               </a>
-              <a href="tel:+918551944773"
+              <a href="tel:+919082706169"
                 className="flex items-center gap-2 border border-[rgba(255,255,255,0.2)] hover:border-[rgba(255,255,255,0.5)] text-[rgba(255,255,255,0.7)] hover:text-white font-semibold px-6 py-3.5 rounded-full transition-all duration-200">
                 Call Us
               </a>
             </div>
             <div className="flex flex-wrap gap-8 pt-8 border-t border-[rgba(255,255,255,0.08)]">
               {[
-                { label: "Phone", value: "+91 85519 44773", href: "tel:+918551944773" },
+                { label: "Phone", value: "+91 90827 06169", href: "tel:+919082706169" },
                 { label: "Email", value: "connect@kreativetech.in", href: "mailto:connect@kreativetech.in" },
                 { label: "Location", value: "Delhi, India", href: undefined },
               ].map((c) => (

@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
 
-const WA = "https://wa.me/918551944773?text=Hi%2C%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20similar%20project.";
+const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20similar%20project.";
 const syne = { fontFamily: "var(--font-syne)" };
 
 const projects = [
