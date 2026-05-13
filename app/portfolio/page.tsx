@@ -11,13 +11,20 @@ const syne = { fontFamily: "var(--font-syne)" };
 
 const projects = [
   { title: "MPROFY Platform", category: "Web App", tag: "Web Development", desc: "A comprehensive platform for managing organisations and communities, featuring user dashboards, analytics, and real-time collaboration tools.", image: "/images/morphy.png", link: "https://mprofy.com/" },
+  { title: "Fourmula AI", category: "AI SaaS", tag: "3D Website", desc: "AI product photography platform — cinematic 3D-rendered hero visuals, scroll-triggered animations, and a high-converting premium dark layout.", image: "https://image.thum.io/get/width/800/https://fourmula.ai/", link: "https://fourmula.ai/", color: "#0D0D1A" },
   { title: "Kathmandu Outdoor", category: "E-commerce", tag: "Shopify", desc: "Full e-commerce store for outdoor and adventure gear — custom product filtering, bundle offers, and integrated shipping for pan-India delivery.", image: "/images/kathMandu.png", link: "https://www.kathmanduoutdoor.com/" },
   { title: "Stealtho Store", category: "Shopify Store", tag: "Shopify", desc: "Premium sneakers and streetwear marketplace with lookbook-style collection pages and WhatsApp checkout.", image: "/images/steathoStore.png", link: "https://stealtho.store/" },
+  { title: "Maguire Shoes", category: "D2C E-commerce", tag: "Shopify", desc: "Women's leather footwear DTC brand — European-crafted collections, smart size filtering, and a clean minimalist aesthetic.", image: "https://image.thum.io/get/width/800/https://maguireshoes.com/", link: "https://maguireshoes.com/", color: "#2C1F14" },
+  { title: "Solace Jewellery", category: "Jewellery Brand", tag: "Shopify", desc: "Hypoallergenic jewellery store — allergy certifications, automated review imports, waterproof product badges, and lifetime guarantee messaging.", image: "https://image.thum.io/get/width/800/https://solacejewellery.co.uk/", link: "https://solacejewellery.co.uk/", color: "#1A1A2E" },
+  { title: "Maison Miru", category: "Modular Jewellery", tag: "Shopify", desc: "Boutique modular jewellery with a 'build your own' product system, high-fidelity visuals, and a premium DTC shopping flow.", image: "https://image.thum.io/get/width/800/https://www.maisonmiru.com/", link: "https://www.maisonmiru.com/", color: "#1C1410" },
+  { title: "Aadyaa Silver", category: "Jewellery", tag: "Shopify", desc: "Premium 92.5 certified silver jewellery — handcrafted collections, niche India audience targeting, and mobile-first product browsing.", image: "https://image.thum.io/get/width/800/https://aadyaa.com/", link: "https://aadyaa.com/", color: "#1A1A1A" },
   { title: "Buki Vista App", category: "Mobile App", tag: "App Development", desc: "Android marketplace app built in Flutter — real-time product listings, in-app chat, location-based search, and Razorpay payments.", image: "/images/portfolio-10.png", link: "https://play.google.com/store/apps/details?id=com.bukivista.bv_app" },
+  { title: "Boldo Doctor App", category: "Telemedicine", tag: "App Development", desc: "Flutter-built telemedicine app with appointment booking, digital health records, patient profiles, and secure video consultations.", image: undefined, link: "https://play.google.com/store/apps/details?id=py.com.psa.boldo", color: "#0A3D5E" },
+  { title: "Clinicea", category: "Healthcare SaaS", tag: "App Development", desc: "End-to-end clinic management — patient EMR, appointment scheduling, billing automation, and doctor workflow tools.", image: "https://image.thum.io/get/width/800/https://www.clinicea.com/", link: "https://www.clinicea.com/", color: "#0A3D5E" },
+  { title: "SuperProcure", category: "Logistics SaaS", tag: "Web Development", desc: "Enterprise logistics platform with real-time shipment tracking, vendor coordination, and analytics for supply chain operations.", image: "https://image.thum.io/get/width/800/https://superprocure.com/", link: "https://superprocure.com/", color: "#0D1A2E" },
+  { title: "Dawn Health", category: "AI Health App", tag: "App Development", desc: "AI-powered sleep therapy app using CBT-I protocols with personalised session tracking and a minimalist high-conversion mobile UI.", image: "https://image.thum.io/get/width/800/https://www.dawn.health/", link: "https://www.dawn.health/", color: "#0A0E1A" },
+  { title: "Vyapar App", category: "Business App", tag: "App Development", desc: "GST billing and accounting for SMEs — inventory management, digital ledger, payment tracking, and real-time financial analytics.", image: "https://image.thum.io/get/width/800/https://vyaparapp.in/", link: "https://vyaparapp.in/", color: "#0D1E3A" },
   { title: "Henry Heffernan Portfolio", category: "Brand Page", tag: "Landing Page", desc: "Personal portfolio website for a software developer — fast-loading, clean design with strong above-the-fold CTA and project showcase.", image: "/images/henry.png", link: "https://henryheffernan.com/" },
-  { title: "Grabzy Platform", category: "Web App", tag: "Web Development", desc: "Feature-rich web application with a modern dashboard UI, real-time data updates, and seamless UX across devices.", image: "/images/grabzy.JPG", link: "#", color: "#1C1C2E" },
-  { title: "LocalMention SaaS", category: "SaaS Dashboard", tag: "Web Development", desc: "Business reputation management SaaS with review aggregation, analytics dashboard, and automated response workflows.", image: "/images/localmention.JPG", link: "#", color: "#0D2137" },
-  { title: "ERP Solution", category: "ERP System", tag: "ERP", desc: "Custom ERP for a mid-size manufacturing company — inventory, purchase orders, billing, and HR modules in one platform.", image: "/images/compare.JPG", link: "#", color: "#1E3A2F" },
 ];
 
 const colors: Record<string, string> = {
@@ -53,8 +60,11 @@ export default function PortfolioPage() {
                 {(p.link && p.link !== "#") ? (
                   <a href={p.link} target="_blank" rel="noopener noreferrer"
                     className="group block bg-[#F7F4EE] border border-[rgba(20,20,20,0.08)] rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(20,20,20,0.1)] transition-all duration-300 h-full">
-                    <div className="relative h-52 overflow-hidden" style={{ background: p.color ?? "#EDE9E0" }}>
-                      <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
+                    <div className="relative h-52 overflow-hidden flex items-center justify-center" style={{ background: p.color ?? "#EDE9E0" }}>
+                      {p.image
+                        ? <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
+                        : <span className="text-5xl font-extrabold text-white/20 tracking-tight" style={syne}>{p.title.split(" ")[0].toUpperCase()}</span>
+                      }
                       <div className="absolute top-3 right-3 bg-white/90 text-xs font-semibold text-[#141414] px-2.5 py-1 rounded-full">{p.tag}</div>
                     </div>
                     <div className="p-5">

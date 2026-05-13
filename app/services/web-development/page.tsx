@@ -128,6 +128,17 @@ export default function WebDevPage() {
                 </a>
               </FadeItem>
             ))}
+            <FadeItem>
+              <div className="bg-[#FDF0E8] border border-[rgba(232,86,26,0.2)] rounded-2xl flex flex-col items-center justify-center text-center p-8 h-full min-h-[260px]">
+                <div className="text-4xl mb-4">💡</div>
+                <h3 className="font-bold text-[#141414] text-lg mb-2" style={syne}>Your Project Next?</h3>
+                <p className="text-sm text-[#5A5A5A] mb-5 font-light">WhatsApp us your idea and get a free quote within 24 hours.</p>
+                <a href={WA} target="_blank" rel="noopener noreferrer"
+                  className="bg-[#E8561A] hover:bg-[#C44010] text-white font-semibold px-6 py-2.5 rounded-full text-sm transition-colors">
+                  Start a Project →
+                </a>
+              </div>
+            </FadeItem>
           </FadeUpGroup>
         </div>
       </section>

@@ -27,11 +27,11 @@ const services = [
 ];
 
 const portfolio = [
-  { title: "Mprofy Platform", category: "Web App", color: "#1C1C2E", textColor: "rgba(255,255,255,0.18)", image: "/images/morphy.png", link: "https://mprofy.com/", tag: "Web3 Platform" },
-  { title: "Kathmandu Outdoor", category: "E-commerce", color: "#0D2137", image: "/images/kathMandu.png", link: "https://www.kathmanduoutdoor.com/", tag: "Shopify" },
-  { title: "Stealtho Store", category: "Marketplace", color: "#1E3A2F", image: "/images/steathoStore.png", link: "https://stealtho.store/", tag: "E-commerce" },
-  { title: "Buki Vista App", category: "Mobile App", color: "#1A0D2E", image: "/images/portfolio-10.png", link: "https://play.google.com/store/apps/details?id=com.bukivista.bv_app", tag: "Android App" },
-  { title: "Henry Heffernan", category: "Portfolio", color: "#0D2137", image: "/images/henry.png", link: "https://henryheffernan.com/", tag: "Landing Page" },
+  { title: "Fourmula AI", category: "AI SaaS", color: "#0D0D1A", image: "https://image.thum.io/get/width/800/https://fourmula.ai/", link: "https://fourmula.ai/", tag: "3D Website" },
+  { title: "Mprofy Platform", category: "Web App", color: "#1C1C2E", image: "/images/morphy.png", link: "https://mprofy.com/", tag: "Web3 Platform" },
+  { title: "Boldo Doctor App", category: "Telemedicine", color: "#0A3D5E", image: undefined, link: "https://play.google.com/store/apps/details?id=py.com.psa.boldo", tag: "Doctor App" },
+  { title: "Maguire Shoes", category: "D2C E-commerce", color: "#2C1F14", image: "https://image.thum.io/get/width/800/https://maguireshoes.com/", link: "https://maguireshoes.com/", tag: "Shopify" },
+  { title: "Solace Jewellery", category: "Jewellery Brand", color: "#1A1A2E", image: "https://image.thum.io/get/width/800/https://solacejewellery.co.uk/", link: "https://solacejewellery.co.uk/", tag: "Shopify" },
 ];
 
 const testimonials = [
@@ -411,8 +411,11 @@ export default function HomePage() {
               <FadeItem key={p.title}>
                 <a href={p.link} target="_blank" rel="noopener noreferrer"
                   className="group block bg-white border border-[rgba(20,20,20,0.08)] rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(20,20,20,0.1)] transition-all duration-300">
-                  <div className="relative h-48 overflow-hidden" style={{ background: p.color }}>
-                    <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
+                  <div className="relative h-48 overflow-hidden flex items-center justify-center" style={{ background: p.color }}>
+                    {p.image
+                      ? <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
+                      : <span className="text-4xl font-extrabold text-white/20 tracking-tight" style={syne}>{p.title.split(" ")[0].toUpperCase()}</span>
+                    }
                     <div className="absolute top-3 left-3 bg-[rgba(255,255,255,0.12)] backdrop-blur-sm border border-[rgba(255,255,255,0.2)] text-white text-xs font-semibold px-2.5 py-1 rounded-full">
                       {p.tag}
                     </div>
