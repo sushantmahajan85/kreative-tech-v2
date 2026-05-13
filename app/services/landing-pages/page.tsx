@@ -48,12 +48,11 @@ function IGReview({ handle, message }: { handle: string; message: string }) {
 }
 
 const portfolio = [
-  { title: "Henry Heffernan Portfolio", desc: "Developer portfolio with strong CTA, project showcase, and clean above-the-fold design.", image: "/images/henry.png", tag: "Portfolio", link: "https://henryheffernan.com/" },
-  { title: "Learnyst", desc: "EdTech SaaS landing page — clear pricing tiers, educator testimonials, and strong free-trial CTA.", color: "#3E1F7B", tag: "SaaS", link: "https://www.learnyst.com" },
-  { title: "Instamojo", desc: "Payment & D2C commerce SaaS — feature breakdown, use-case segmentation, and conversion-led design.", color: "#8B0A4A", tag: "Fintech SaaS", link: "https://www.instamojo.com" },
-  { title: "InVideo", desc: "AI video creation SaaS — animated product demos, strong free-tier hook, and global-ready copy.", color: "#4A1F7A", tag: "SaaS", link: "https://invideo.io" },
-  { title: "Classplus", desc: "B2B EdTech platform for coaching institutes — benefit-led page with video testimonials from owners.", color: "#7A3A00", tag: "B2B SaaS", link: "https://classplusapp.com" },
-  { title: "PropTiger", desc: "Real estate portal with city-wise landing pages, verified listings, and EMI calculators above the fold.", color: "#7A1A1A", tag: "Real Estate", link: "https://www.proptiger.com" },
+  { title: "Scalewell", desc: "Wellness business coaching page — bold headline, pain-point copy, video CTA, and testimonials built for Indian SME audiences.", image: "https://image.thum.io/get/width/800/https://scalewell.in/", tag: "Business Coaching", link: "https://scalewell.in/" },
+  { title: "Vivek Advantage", desc: "Freelance Meta Ads consultant page — ROI-first copy, ₹ ad spend credibility, pain-point sections, and direct book-a-call CTA.", image: "https://image.thum.io/get/width/800/https://vivekadvantage.in/", tag: "Consultant Page", link: "https://vivekadvantage.in/" },
+  { title: "Base Shgala", desc: "Indian entrepreneur and MSME business coach — bold transformation copy, programme showcase, and consultation CTA flow.", image: "https://image.thum.io/get/width/800/https://baseshgala.com/", tag: "MSME Coaching", link: "https://baseshgala.com/" },
+  { title: "Fourmula AI", desc: "AI product photography platform — 3D-rendered hero visuals, scroll-triggered feature animations, and premium dark layout.", image: "https://image.thum.io/get/width/800/https://fourmula.ai/", tag: "AI SaaS", link: "https://fourmula.ai/" },
+  { title: "Relace AI", desc: "AI infrastructure startup — cinematic 3D dark visuals, motion typography, rapid-scan modular sections, and bold above-the-fold.", image: "https://image.thum.io/get/width/800/https://relace.ai/", tag: "AI Startup", link: "https://relace.ai/" },
 ];
 
 const features = [

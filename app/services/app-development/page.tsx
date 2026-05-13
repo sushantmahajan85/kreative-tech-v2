@@ -57,12 +57,11 @@ const features = [
 ];
 
 const portfolio = [
-  { title: "Buki Vista App", desc: "Android marketplace with real-time listings, in-app chat, and Razorpay payments.", image: "/images/portfolio-10.png", tag: "Android App", link: "https://play.google.com/store/apps/details?id=com.bukivista.bv_app" },
-  { title: "Borzo Delivery", desc: "Same-day business delivery platform with live tracking and multi-city logistics.", tag: "Delivery App", color: "#FF5A00", link: "https://play.google.com/store/apps/details?id=com.wefast.customer" },
-  { title: "Apna Jobs App", desc: "Blue-collar job networking app connecting workers with local employers across India.", tag: "Job Platform", color: "#1565C0", link: "https://play.google.com/store/apps/details?id=com.apna.app" },
-  { title: "RentoMojo", desc: "Furniture & appliance rental marketplace for urban professionals on monthly plans.", tag: "Marketplace", color: "#E53935", link: "https://play.google.com/store/apps/details?id=com.rentomojo" },
-  { title: "NoBroker", desc: "Zero-brokerage property rental platform connecting owners and tenants directly.", tag: "Real Estate App", color: "#00897B", link: "https://play.google.com/store/apps/details?id=com.nobroker.app" },
-  { title: "Supertails", desc: "Pet care marketplace with vet consultations, subscription boxes, and pet accessories.", tag: "Pet Care App", color: "#FF6D00", link: "https://play.google.com/store/apps/details?id=com.supertails" },
+  { title: "Clinicea", desc: "End-to-end clinic management — patient EMR, appointment scheduling, billing automation, and doctor workflows.", image: "https://image.thum.io/get/width/800/https://www.clinicea.com/", tag: "Healthcare SaaS", link: "https://www.clinicea.com/" },
+  { title: "SuperProcure", desc: "Enterprise logistics platform with real-time shipment tracking, vendor coordination, and supply chain analytics.", image: "https://image.thum.io/get/width/800/https://superprocure.com/", tag: "Logistics SaaS", link: "https://superprocure.com/" },
+  { title: "Dawn Health", desc: "AI-powered sleep therapy app with CBT-I protocols, personalised session tracking, and minimalist mobile UI.", image: "https://image.thum.io/get/width/800/https://www.dawn.health/", tag: "Health App", link: "https://www.dawn.health/" },
+  { title: "Vyapar App", desc: "GST billing and accounting for SMEs — inventory management, digital ledger, payment tracking, and financial analytics.", image: "https://image.thum.io/get/width/800/https://vyaparapp.in/", tag: "Business App", link: "https://vyaparapp.in/" },
+  { title: "Boldo Telemedicine", desc: "Flutter-built telemedicine app with doctor appointment booking, digital health records, and secure video consultations.", color: "#0A3D5E", tag: "Telemedicine", link: "https://play.google.com/store/apps/details?id=py.com.psa.boldo", playStore: true },
 ];
 
 export default function AppDevPage() {
@@ -165,7 +164,7 @@ export default function AppDevPage() {
                   <div className="p-5">
                     <h3 className="font-bold text-[#141414] mb-1" style={syne}>{p.title}</h3>
                     <p className="text-sm text-[#5A5A5A] font-light">{p.desc}</p>
-                    {p.link && <div className="flex items-center gap-1 mt-3 text-xs font-semibold text-[#E8561A] group-hover:gap-2 transition-all">View on Play Store →</div>}
+                    {p.link && <div className="flex items-center gap-1 mt-3 text-xs font-semibold text-[#E8561A] group-hover:gap-2 transition-all">{(p as {playStore?: boolean}).playStore ? "View on Play Store →" : "View live site →"}</div>}
                   </div>
                 </a>
               </FadeItem>

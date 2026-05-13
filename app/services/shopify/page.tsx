@@ -54,12 +54,11 @@ function IGReview({ handle, message }: { handle: string; message: string }) {
 }
 
 const portfolio = [
-  { title: "Kathmandu Outdoor", desc: "Full adventure gear store — custom filters, Indian payments, pan-India shipping.", image: "/images/kathMandu.png", tag: "Shopify", link: "https://www.kathmanduoutdoor.com/" },
-  { title: "Stealtho Store", desc: "Premium sneaker marketplace with lookbook pages and WhatsApp checkout.", image: "/images/steathoStore.png", tag: "Shopify", link: "https://stealtho.store/" },
-  { title: "Giva Jewellery", desc: "D2C silver jewellery brand — clean editorial design with Instagram ad integration and fast checkout.", color: "#8B7355", tag: "Jewellery", link: "https://www.giva.co" },
-  { title: "Zariin Handcrafted", desc: "Artisan gold-dipped jewellery store with story-driven product pages and gifting collections.", color: "#5C4A1E", tag: "Jewellery", link: "https://zariin.com" },
-  { title: "Bombay Trousseau", desc: "Indian bridal and occasion wear brand with editorial lookbooks and festive campaign pages.", color: "#5C1A28", tag: "Fashion", link: "https://www.bombaytrousseau.com" },
-  { title: "The Indus Valley", desc: "Clean-ingredient Ayurvedic personal care brand with subscription products and content marketing.", color: "#3D2B1F", tag: "Wellness", link: "https://www.theindusvalley.in" },
+  { title: "Aadyaa Silver", desc: "Premium 92.5 certified silver jewellery — handcrafted collections, niche India audience, and mobile-first product browsing.", image: "https://image.thum.io/get/width/800/https://aadyaa.com/", tag: "Jewellery", link: "https://aadyaa.com/" },
+  { title: "Knaya Med", desc: "Medical scrubs and healthcare apparel with niche B2B positioning and category-wise browsing for doctors and nurses.", image: "https://image.thum.io/get/width/800/https://www.knyamed.com/", tag: "Medical Apparel", link: "https://www.knyamed.com/" },
+  { title: "Maison Miru", desc: "Boutique modular jewellery — 'build your own' product system, high-fidelity visuals, and a premium DTC shopping flow.", image: "https://image.thum.io/get/width/800/https://www.maisonmiru.com/", tag: "Modular Jewellery", link: "https://www.maisonmiru.com/" },
+  { title: "Maguire Shoes", desc: "Women's leather footwear DTC store — European-crafted collections, smart size filtering, and clean minimalist brand aesthetic.", image: "https://image.thum.io/get/width/800/https://maguireshoes.com/", tag: "Footwear", link: "https://maguireshoes.com/" },
+  { title: "Solace Jewellery", desc: "Hypoallergenic jewellery built around trust — allergy certifications, review imports, waterproof badges, and lifetime guarantee.", image: "https://image.thum.io/get/width/800/https://solacejewellery.co.uk/", tag: "Jewellery", link: "https://solacejewellery.co.uk/" },
 ];
 
 const features = [
