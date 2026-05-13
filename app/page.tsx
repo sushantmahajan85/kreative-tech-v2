@@ -60,7 +60,7 @@ const techStack = [
   { logo: "https://cdn.simpleicons.org/nodedotjs/339933", name: "Node.JS" },
   { logo: "https://cdn.simpleicons.org/python/3776AB", name: "Python" },
   { logo: "https://cdn.simpleicons.org/shopify/7AB55C", name: "Shopify" },
-  { logo: "https://cdn.simpleicons.org/amazonaws/FF9900", name: "AWS" },
+  { logo: "https://cdn.simpleicons.org/amazonwebservices/FF9900", name: "AWS" },
   { logo: "https://cdn.simpleicons.org/firebase/FFCA28", name: "Firebase" },
   { logo: "https://cdn.simpleicons.org/mysql/4479A1", name: "MySQL" },
   { logo: "https://cdn.simpleicons.org/mongodb/47A248", name: "MongoDB" },
@@ -132,21 +132,18 @@ export default function HomePage() {
             </div>
 
             {/* Trust stats */}
-            <div className="flex flex-wrap items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-5">
               {[
                 { to: 5, suffix: "+", label: "Years in Business" },
                 { to: 80, suffix: "+", label: "Projects Delivered" },
                 { to: 50, suffix: "+", label: "Happy Clients" },
                 { to: 4.9, suffix: "★", decimals: 1, label: "Client Rating" },
-              ].map((s, i) => (
-                <div key={s.label} className="flex items-center">
-                  {i > 0 && <div className="w-px h-7 bg-[rgba(20,20,20,0.12)] mx-5" />}
-                  <div>
-                    <div className="text-2xl font-extrabold text-[#141414] leading-none" style={syne}>
-                      <CountUp to={s.to} suffix={s.suffix} decimals={s.decimals ?? 0} />
-                    </div>
-                    <div className="text-xs text-[#5A5A5A] mt-1">{s.label}</div>
+              ].map((s) => (
+                <div key={s.label}>
+                  <div className="text-2xl font-extrabold text-[#141414] leading-none" style={syne}>
+                    <CountUp to={s.to} suffix={s.suffix} decimals={s.decimals ?? 0} />
                   </div>
+                  <div className="text-xs text-[#5A5A5A] mt-1">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -189,16 +186,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CLIENT LOGOS STRIP ── */}
-      <div className="border-t border-b border-[rgba(20,20,20,0.08)] bg-white py-6">
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 flex flex-wrap items-center justify-center gap-8 md:gap-12">
-          <span className="text-xs font-medium text-[#B0ACA5] tracking-wide uppercase">Trusted by</span>
-          {["Mprofy", "Kathmandu Outdoor", "Stealtho Store", "Buki Vista", "Henry Heffernan", "LocalMention"].map((c) => (
-            <span key={c} className="text-sm font-bold text-[#B0ACA5] hover:text-[#5A5A5A] transition-colors cursor-default"
-              style={syne}>{c}</span>
-          ))}
-        </div>
-      </div>
 
       {/* ── ABOUT + VIDEO ── */}
       <section id="about" className="py-24 bg-[#F7F4EE]" aria-labelledby="about-heading">

@@ -86,8 +86,8 @@ export default function Footer() {
             <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-4">Contact</h4>
             <ul className="space-y-3 list-none p-0 m-0">
               <li>
-                <a href="tel:+919082706169" className="text-sm text-[rgba(255,255,255,0.45)] hover:text-white transition-colors">
-                  +91 90827 06169
+                <a href="tel:+918551944773" className="text-sm text-[rgba(255,255,255,0.45)] hover:text-white transition-colors">
+                  +91 85519 44773
                 </a>
               </li>
               <li>

@@ -98,14 +98,11 @@ export default function ShopifyPage() {
                 See Portfolio
               </Link>
             </div>
-            <div className="flex flex-wrap items-center">
-              {[["₹25,000+", "Starting Price"], ["7–14 Days", "Delivery"], ["50+", "Stores Built"], ["100%", "Satisfaction"]].map(([val, lbl], i) => (
-                <div key={lbl} className="flex items-center">
-                  {i > 0 && <div className="w-px h-7 bg-[rgba(20,20,20,0.12)] mx-4" />}
-                  <div>
-                    <div className="text-lg font-extrabold text-[#141414] leading-none" style={syne}>{val}</div>
-                    <div className="text-xs text-[#5A5A5A] mt-0.5">{lbl}</div>
-                  </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-5 gap-y-4">
+              {[["₹25,000+", "Starting Price"], ["7–14 Days", "Delivery"], ["50+", "Stores Built"], ["100%", "Satisfaction"]].map(([val, lbl]) => (
+                <div key={lbl}>
+                  <div className="text-lg font-extrabold text-[#141414] leading-none" style={syne}>{val}</div>
+                  <div className="text-xs text-[#5A5A5A] mt-0.5">{lbl}</div>
                 </div>
               ))}
             </div>

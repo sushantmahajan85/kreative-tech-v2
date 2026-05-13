@@ -66,16 +66,13 @@ export default function UiUxPage() {
                 See Portfolio
               </Link>
             </div>
-            <div className="flex flex-wrap items-center">
-              {heroStats.map((s, i) => (
-                <div key={s.lbl} className="flex items-center">
-                  {i > 0 && <div className="w-px h-7 bg-[rgba(20,20,20,0.12)] mx-4" />}
-                  <div>
-                    <div className="text-lg font-extrabold text-[#141414] leading-none" style={syne}>
-                      {s.to !== undefined ? <CountUp to={s.to} suffix={s.suffix ?? ""} /> : s.val}
-                    </div>
-                    <div className="text-xs text-[#5A5A5A] mt-0.5">{s.lbl}</div>
+            <div className="grid grid-cols-3 gap-x-5 gap-y-4">
+              {heroStats.map((s) => (
+                <div key={s.lbl}>
+                  <div className="text-lg font-extrabold text-[#141414] leading-none" style={syne}>
+                    {s.to !== undefined ? <CountUp to={s.to} suffix={s.suffix ?? ""} /> : s.val}
                   </div>
+                  <div className="text-xs text-[#5A5A5A] mt-0.5">{s.lbl}</div>
                 </div>
               ))}
             </div>
