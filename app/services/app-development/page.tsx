@@ -5,6 +5,8 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
+import VideoPlayer from "@/components/VideoPlayer";
+import allProjects from "@/data/projects.json";
 
 const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20want%20to%20build%20a%20mobile%20app.%20Can%20you%20share%20a%20quote%3F";
 const syne = { fontFamily: "var(--font-syne)" };
@@ -56,13 +58,7 @@ const features = [
   { icon: "🚀", title: "App Store Submission", desc: "We handle Play Store and App Store submission, metadata, screenshots, and review cycle." },
 ];
 
-const portfolio = [
-  { title: "Clinicea", desc: "End-to-end clinic management — patient EMR, appointment scheduling, billing automation, and doctor workflows.", image: "https://image.thum.io/get/width/800/https://www.clinicea.com/", tag: "Healthcare SaaS", link: "https://www.clinicea.com/" },
-  { title: "SuperProcure", desc: "Enterprise logistics platform with real-time shipment tracking, vendor coordination, and supply chain analytics.", image: "https://image.thum.io/get/width/800/https://superprocure.com/", tag: "Logistics SaaS", link: "https://superprocure.com/" },
-  { title: "Dawn Health", desc: "AI-powered sleep therapy app with CBT-I protocols, personalised session tracking, and minimalist mobile UI.", image: "https://image.thum.io/get/width/800/https://www.dawn.health/", tag: "Health App", link: "https://www.dawn.health/" },
-  { title: "Vyapar App", desc: "GST billing and accounting for SMEs — inventory management, digital ledger, payment tracking, and financial analytics.", image: "https://image.thum.io/get/width/800/https://vyaparapp.in/", tag: "Business App", link: "https://vyaparapp.in/" },
-  { title: "Boldo Telemedicine", desc: "Flutter-built telemedicine app with doctor appointment booking, digital health records, and secure video consultations.", color: "#0A3D5E", tag: "Telemedicine", link: "https://play.google.com/store/apps/details?id=py.com.psa.boldo", playStore: true },
-];
+const portfolio = allProjects.projects.filter((p) => p.categories.includes("app-development"));
 
 export default function AppDevPage() {
   return (
@@ -101,21 +97,11 @@ export default function AppDevPage() {
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <div className="relative w-full aspect-video bg-[#141414] rounded-2xl overflow-hidden cursor-pointer group"
-              onClick={(e) => {
-                (e.currentTarget as HTMLElement).innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_APP_VIDEO_ID?autoplay=1" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;inset:0;border-radius:16px;width:100%;height:100%;"></iframe>`;
-              }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-[rgba(232,86,26,0.5)] to-[rgba(20,20,20,0.78)] flex flex-col items-center justify-center gap-3 group-hover:opacity-90 transition-opacity">
-                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-200">
-                  <div style={{ width: 0, height: 0, borderStyle: "solid", borderWidth: "10px 0 10px 18px", borderColor: "transparent transparent transparent #E8561A", marginLeft: 3 }} />
-                </div>
-                <div className="text-center">
-                  <div className="text-white font-semibold text-sm">App Build — Design to Play Store</div>
-                  <div className="text-white/60 text-xs mt-1">Full development walkthrough</div>
-                </div>
-              </div>
-              <div className="absolute top-3 left-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-2.5 py-1 rounded-full">▶ Watch Now</div>
-            </div>
+            <VideoPlayer
+              title="App Build — Design to Play Store"
+              subtitle="Full development walkthrough"
+              badge="▶ Watch Now"
+            />
           </FadeUp>
         </div>
       </section>

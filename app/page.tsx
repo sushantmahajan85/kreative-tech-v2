@@ -7,6 +7,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
 import CountUp from "@/components/CountUp";
+import VideoPlayer from "@/components/VideoPlayer";
+import allProjects from "@/data/projects.json";
 
 const WA_LINK = "https://wa.me/919082706169?text=Hi%2C%20I%20am%20interested%20in%20your%20services.";
 const WA_QUOTE = "https://wa.me/919082706169?text=Hi%2C%20I%20want%20to%20discuss%20a%20project%20and%20get%20a%20quote.";
@@ -14,6 +16,8 @@ const WA_QUOTE = "https://wa.me/919082706169?text=Hi%2C%20I%20want%20to%20discus
 const syne = { fontFamily: "var(--font-syne), 'Syne', system-ui, sans-serif" };
 
 // ── Data ──────────────────────────────────────────────────────────────────────
+
+const portfolio = allProjects.projects.filter((p) => p.categories.includes("home"));
 
 const services = [
   { icon: "🌐", title: "Website Design & Development", desc: "Mobile-first, SEO-optimised websites that load in under 2 seconds and convert visitors into leads.", href: "/services/web-development/" },
@@ -24,14 +28,6 @@ const services = [
   { icon: "☁️", title: "Cloud & DevOps", desc: "Scalable cloud infrastructure on AWS, GCP, or Azure. Setup, migration, monitoring, and cost optimisation.", href: "/services/cloud-devops/" },
   { icon: "🎨", title: "UI/UX Design", desc: "User-centred design that looks stunning and converts. Wireframes, prototypes, and final design assets.", href: "/services/ui-ux/" },
   { icon: "🤖", title: "Telegram & WhatsApp Bots", desc: "Automate customer support, lead capture, and order notifications with intelligent messaging bots.", href: "/services/bots/" },
-];
-
-const portfolio = [
-  { title: "Fourmula AI", category: "AI SaaS", color: "#0D0D1A", image: "https://image.thum.io/get/width/800/https://fourmula.ai/", link: "https://fourmula.ai/", tag: "3D Website" },
-  { title: "Mprofy Platform", category: "Web App", color: "#1C1C2E", image: "/images/morphy.png", link: "https://mprofy.com/", tag: "Web3 Platform" },
-  { title: "Boldo Doctor App", category: "Telemedicine", color: "#0A3D5E", image: undefined, link: "https://play.google.com/store/apps/details?id=py.com.psa.boldo", tag: "Doctor App" },
-  { title: "Maguire Shoes", category: "D2C E-commerce", color: "#2C1F14", image: "https://image.thum.io/get/width/800/https://maguireshoes.com/", link: "https://maguireshoes.com/", tag: "Shopify" },
-  { title: "Solace Jewellery", category: "Jewellery Brand", color: "#1A1A2E", image: "https://image.thum.io/get/width/800/https://solacejewellery.co.uk/", link: "https://solacejewellery.co.uk/", tag: "Shopify" },
 ];
 
 const testimonials = [
@@ -152,21 +148,11 @@ export default function HomePage() {
           {/* Right — video */}
           <FadeUp delay={0.1}>
             <div className="relative">
-              <div className="relative w-full aspect-video bg-[#141414] rounded-2xl overflow-hidden cursor-pointer group"
-                onClick={(e) => {
-                  (e.currentTarget as HTMLElement).innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;inset:0;border-radius:16px;width:100%;height:100%;"></iframe>`;
-                }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-[rgba(232,86,26,0.5)] to-[rgba(20,20,20,0.78)] flex flex-col items-center justify-center gap-3 group-hover:opacity-90 transition-opacity">
-                  <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-200">
-                    <div style={{ width: 0, height: 0, borderStyle: "solid", borderWidth: "10px 0 10px 18px", borderColor: "transparent transparent transparent #E8561A", marginLeft: 3 }} />
-                  </div>
-                  <div className="text-center">
-                    <div className="text-white font-semibold text-sm">Watch Our Agency Showreel</div>
-                    <div className="text-white/60 text-xs mt-1">See what we build — 2 min</div>
-                  </div>
-                </div>
-                <div className="absolute top-3 left-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-2.5 py-1 rounded-full">▶ Play Demo</div>
-              </div>
+              <VideoPlayer
+                title="Watch Our Agency Showreel"
+                subtitle="See what we build — 2 min"
+                badge="▶ Play Demo"
+              />
               <div className="grid grid-cols-3 gap-3 mt-4">
                 {[
                   { to: 5, suffix: "+", decimals: 0, sub: "Years Exp." },

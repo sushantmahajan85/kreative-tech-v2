@@ -5,18 +5,12 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
+import VideoPlayer from "@/components/VideoPlayer";
+import allProjects from "@/data/projects.json";
 
 const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20need%20a%20website%20built.%20Can%20you%20share%20a%20quote%3F";
 const syne = { fontFamily: "var(--font-syne)" };
-
-const portfolio = [
-  { title: "Mprofy Platform", desc: "Web3 platform for managing DAOs, communities, and reward systems.", image: "/images/morphy.png", tag: "Web App", link: "https://mprofy.com/" },
-  { title: "Grabzy Platform", desc: "Feature-rich web application with real-time data updates and a modern dashboard UI.", image: "/images/grabzy.JPG", tag: "Web App", color: "#1C1C2E", link: "#" },
-  { title: "LocalMention SaaS", desc: "Review management SaaS with analytics dashboard and automated response workflows.", image: "/images/localmention.JPG", tag: "SaaS", color: "#0D2137", link: "#" },
-  { title: "Zimyo HR Platform", desc: "HR & payroll SaaS for Indian SMBs — onboarding, attendance, leaves, and salary processing.", color: "#1A2F5C", tag: "HR SaaS", link: "https://zimyo.com" },
-  { title: "Yocket Study Abroad", desc: "Study abroad platform with university search, profile builder, and application tracker.", color: "#2A1A5C", tag: "EdTech Platform", link: "https://yocket.com" },
-  { title: "Leegality Docs", desc: "Digital document signing and workflow automation SaaS for Indian businesses and legal teams.", color: "#0A3A3A", tag: "LegalTech", link: "https://www.leegality.com" },
-];
+const portfolio = allProjects.projects.filter((p) => p.categories.includes("web-development"));
 
 const features = [
   { icon: "⚡", title: "Fast-Loading & SEO-Ready", desc: "Core Web Vitals optimised. 90+ PageSpeed scores. Google-friendly from day one." },
@@ -64,21 +58,11 @@ export default function WebDevPage() {
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <div className="relative w-full aspect-video bg-[#141414] rounded-2xl overflow-hidden cursor-pointer group"
-              onClick={(e) => {
-                (e.currentTarget as HTMLElement).innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_WEBDEV_VIDEO_ID?autoplay=1" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;inset:0;border-radius:16px;width:100%;height:100%;"></iframe>`;
-              }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-[rgba(232,86,26,0.5)] to-[rgba(20,20,20,0.78)] flex flex-col items-center justify-center gap-3 group-hover:opacity-90 transition-opacity">
-                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-200">
-                  <div style={{ width: 0, height: 0, borderStyle: "solid", borderWidth: "10px 0 10px 18px", borderColor: "transparent transparent transparent #E8561A", marginLeft: 3 }} />
-                </div>
-                <div className="text-center">
-                  <div className="text-white font-semibold text-sm">Website Build — Design to Deployment</div>
-                  <div className="text-white/60 text-xs mt-1">Full development walkthrough</div>
-                </div>
-              </div>
-              <div className="absolute top-3 left-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-2.5 py-1 rounded-full">▶ Watch Now</div>
-            </div>
+            <VideoPlayer
+              title="Website Build — Design to Deployment"
+              subtitle="Full development walkthrough"
+              badge="▶ Watch Now"
+            />
           </FadeUp>
         </div>
       </section>

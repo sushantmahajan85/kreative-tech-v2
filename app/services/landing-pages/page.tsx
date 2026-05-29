@@ -5,6 +5,8 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
+import VideoPlayer from "@/components/VideoPlayer";
+import allProjects from "@/data/projects.json";
 
 const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20need%20a%20landing%20page%20for%20my%20Instagram%20Ads.%20Can%20you%20help%3F";
 const syne = { fontFamily: "var(--font-syne)" };
@@ -47,13 +49,7 @@ function IGReview({ handle, message }: { handle: string; message: string }) {
   );
 }
 
-const portfolio = [
-  { title: "Scalewell", desc: "Wellness business coaching page — bold headline, pain-point copy, video CTA, and testimonials built for Indian SME audiences.", image: "https://image.thum.io/get/width/800/https://scalewell.in/", tag: "Business Coaching", link: "https://scalewell.in/" },
-  { title: "Vivek Advantage", desc: "Freelance Meta Ads consultant page — ROI-first copy, ₹ ad spend credibility, pain-point sections, and direct book-a-call CTA.", image: "https://image.thum.io/get/width/800/https://vivekadvantage.in/", tag: "Consultant Page", link: "https://vivekadvantage.in/" },
-  { title: "Base Shgala", desc: "Indian entrepreneur and MSME business coach — bold transformation copy, programme showcase, and consultation CTA flow.", image: "https://image.thum.io/get/width/800/https://baseshgala.com/", tag: "MSME Coaching", link: "https://baseshgala.com/" },
-  { title: "Fourmula AI", desc: "AI product photography platform — 3D-rendered hero visuals, scroll-triggered feature animations, and premium dark layout.", image: "https://image.thum.io/get/width/800/https://fourmula.ai/", tag: "AI SaaS", link: "https://fourmula.ai/" },
-  { title: "Relace AI", desc: "AI infrastructure startup — cinematic 3D dark visuals, motion typography, rapid-scan modular sections, and bold above-the-fold.", image: "https://image.thum.io/get/width/800/https://relace.ai/", tag: "AI Startup", link: "https://relace.ai/" },
-];
+const portfolio = allProjects.projects.filter((p) => p.categories.includes("landing-pages"));
 
 const features = [
   { icon: "⚡", title: "Sub-3 Second Load Time", desc: "Google penalises slow pages. We build for speed — every landing page scores 90+ on PageSpeed." },
@@ -101,21 +97,11 @@ export default function LandingPagesPage() {
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <div className="relative w-full aspect-video bg-[#141414] rounded-2xl overflow-hidden cursor-pointer group"
-              onClick={(e) => {
-                (e.currentTarget as HTMLElement).innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_LP_VIDEO_ID?autoplay=1" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;inset:0;border-radius:16px;width:100%;height:100%;"></iframe>`;
-              }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-[rgba(232,86,26,0.5)] to-[rgba(20,20,20,0.78)] flex flex-col items-center justify-center gap-3 group-hover:opacity-90 transition-opacity">
-                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-200">
-                  <div style={{ width: 0, height: 0, borderStyle: "solid", borderWidth: "10px 0 10px 18px", borderColor: "transparent transparent transparent #E8561A", marginLeft: 3 }} />
-                </div>
-                <div className="text-center">
-                  <div className="text-white font-semibold text-sm">Landing Page — 18% Conversion Rate</div>
-                  <div className="text-white/60 text-xs mt-1">Full case study walkthrough</div>
-                </div>
-              </div>
-              <div className="absolute top-3 left-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-2.5 py-1 rounded-full">▶ Watch Now</div>
-            </div>
+            <VideoPlayer
+              title="Landing Page — 18% Conversion Rate"
+              subtitle="Full case study walkthrough"
+              badge="▶ Watch Now"
+            />
           </FadeUp>
         </div>
       </section>

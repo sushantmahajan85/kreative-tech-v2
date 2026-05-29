@@ -5,6 +5,8 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
+import VideoPlayer from "@/components/VideoPlayer";
+import allProjects from "@/data/projects.json";
 
 const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20want%20a%20Shopify%20store.%20Can%20you%20share%20a%20quote%3F";
 const syne = { fontFamily: "var(--font-syne)" };
@@ -53,13 +55,7 @@ function IGReview({ handle, message }: { handle: string; message: string }) {
   );
 }
 
-const portfolio = [
-  { title: "Aadyaa Silver", desc: "Premium 92.5 certified silver jewellery — handcrafted collections, niche India audience, and mobile-first product browsing.", image: "https://image.thum.io/get/width/800/https://aadyaa.com/", tag: "Jewellery", link: "https://aadyaa.com/" },
-  { title: "Knaya Med", desc: "Medical scrubs and healthcare apparel with niche B2B positioning and category-wise browsing for doctors and nurses.", image: "https://image.thum.io/get/width/800/https://www.knyamed.com/", tag: "Medical Apparel", link: "https://www.knyamed.com/" },
-  { title: "Maison Miru", desc: "Boutique modular jewellery — 'build your own' product system, high-fidelity visuals, and a premium DTC shopping flow.", image: "https://image.thum.io/get/width/800/https://www.maisonmiru.com/", tag: "Modular Jewellery", link: "https://www.maisonmiru.com/" },
-  { title: "Maguire Shoes", desc: "Women's leather footwear DTC store — European-crafted collections, smart size filtering, and clean minimalist brand aesthetic.", image: "https://image.thum.io/get/width/800/https://maguireshoes.com/", tag: "Footwear", link: "https://maguireshoes.com/" },
-  { title: "Solace Jewellery", desc: "Hypoallergenic jewellery built around trust — allergy certifications, review imports, waterproof badges, and lifetime guarantee.", image: "https://image.thum.io/get/width/800/https://solacejewellery.co.uk/", tag: "Jewellery", link: "https://solacejewellery.co.uk/" },
-];
+const portfolio = allProjects.projects.filter((p) => p.categories.includes("shopify"));
 
 const features = [
   { icon: "🎨", title: "Custom Shopify Theme", desc: "100% custom design — no paid templates. Built to match your brand identity and convert Indian shoppers." },
@@ -108,21 +104,11 @@ export default function ShopifyPage() {
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <div className="relative w-full aspect-video bg-[#141414] rounded-2xl overflow-hidden cursor-pointer group"
-              onClick={(e) => {
-                (e.currentTarget as HTMLElement).innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_SHOPIFY_VIDEO_ID?autoplay=1" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;inset:0;border-radius:16px;width:100%;height:100%;"></iframe>`;
-              }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-[rgba(232,86,26,0.5)] to-[rgba(20,20,20,0.78)] flex flex-col items-center justify-center gap-3 group-hover:opacity-90 transition-opacity">
-                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-200">
-                  <div style={{ width: 0, height: 0, borderStyle: "solid", borderWidth: "10px 0 10px 18px", borderColor: "transparent transparent transparent #E8561A", marginLeft: 3 }} />
-                </div>
-                <div className="text-center">
-                  <div className="text-white font-semibold text-sm">Shopify Store — Full Build Walkthrough</div>
-                  <div className="text-white/60 text-xs mt-1">From design to first sale in 10 days</div>
-                </div>
-              </div>
-              <div className="absolute top-3 left-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-2.5 py-1 rounded-full">▶ Watch Now</div>
-            </div>
+            <VideoPlayer
+              title="Shopify Store — Full Build Walkthrough"
+              subtitle="From design to first sale in 10 days"
+              badge="▶ Watch Now"
+            />
           </FadeUp>
         </div>
       </section>

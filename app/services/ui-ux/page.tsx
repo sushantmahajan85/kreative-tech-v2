@@ -3,9 +3,14 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
+import VideoPlayer from "@/components/VideoPlayer";
 import CountUp from "@/components/CountUp";
+import Image from "next/image";
+import allProjects from "@/data/projects.json";
 
 const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20need%20UI%2FUX%20Design%20services.%20Can%20you%20share%20a%20quote%3F";
+
+const portfolio = allProjects.projects.filter((p) => p.categories.includes("ui-ux"));
 const syne = { fontFamily: "var(--font-syne)" };
 
 const heroStats: Array<{ val?: string; to?: number; suffix?: string; lbl: string }> = [
@@ -79,21 +84,12 @@ export default function UiUxPage() {
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <div className="relative w-full aspect-video bg-[#141414] rounded-2xl overflow-hidden cursor-pointer group"
-              onClick={(e) => {
-                (e.currentTarget as HTMLElement).innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;inset:0;border-radius:16px;width:100%;height:100%;"></iframe>`;
-              }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-[rgba(139,68,232,0.5)] to-[rgba(20,20,20,0.78)] flex flex-col items-center justify-center gap-3 group-hover:opacity-90 transition-opacity">
-                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-200">
-                  <div style={{ width: 0, height: 0, borderStyle: "solid", borderWidth: "10px 0 10px 18px", borderColor: "transparent transparent transparent #E8561A", marginLeft: 3 }} />
-                </div>
-                <div className="text-center">
-                  <div className="text-white font-semibold text-sm">UI/UX Process — From Idea to Handoff</div>
-                  <div className="text-white/60 text-xs mt-1">See our design workflow</div>
-                </div>
-              </div>
-              <div className="absolute top-3 left-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-2.5 py-1 rounded-full">▶ Watch Demo</div>
-            </div>
+            <VideoPlayer
+              gradientFrom="rgba(139,68,232,0.5)"
+              title="UI/UX Process — From Idea to Handoff"
+              subtitle="See our design workflow"
+              badge="▶ Watch Demo"
+            />
           </FadeUp>
         </div>
       </section>
@@ -112,6 +108,35 @@ export default function UiUxPage() {
                   <h3 className="font-bold text-[#141414] mb-2" style={syne}>{f.title}</h3>
                   <p className="text-sm text-[#5A5A5A] font-light leading-relaxed">{f.desc}</p>
                 </div>
+              </FadeItem>
+            ))}
+          </FadeUpGroup>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8">
+          <FadeUp className="mb-12">
+            <span className="text-xs font-semibold text-[#E8561A] uppercase tracking-widest block mb-3">Our Work</span>
+            <h2 className="text-[clamp(26px,2.8vw,36px)] font-bold text-[#141414] tracking-[-0.8px]" style={syne}>Products We&apos;ve Designed</h2>
+          </FadeUp>
+          <FadeUpGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {portfolio.map((p) => (
+              <FadeItem key={p.id}>
+                <a href={p.link !== "#" ? p.link : undefined} target={p.link !== "#" ? "_blank" : undefined} rel="noopener noreferrer"
+                  className="group block bg-[#F7F4EE] border border-[rgba(20,20,20,0.08)] rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(20,20,20,0.1)] transition-all duration-300 h-full">
+                  <div className="relative h-48 flex items-center justify-center overflow-hidden" style={{ background: p.color ?? "#EDE9E0" }}>
+                    {p.image
+                      ? <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
+                      : <span className="text-4xl font-extrabold text-white/20 tracking-tight" style={syne}>{p.title.split(" ")[0].toUpperCase()}</span>}
+                    <div className="absolute top-3 left-3 bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold px-2.5 py-1 rounded-full">{p.tag}</div>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-bold text-[#141414] mb-1" style={syne}>{p.title}</h3>
+                    <p className="text-sm text-[#5A5A5A] font-light leading-relaxed">{p.desc}</p>
+                    {p.link !== "#" && <div className="flex items-center gap-1 mt-3 text-xs font-semibold text-[#E8561A] group-hover:gap-2 transition-all">View live site →</div>}
+                  </div>
+                </a>
               </FadeItem>
             ))}
           </FadeUpGroup>
