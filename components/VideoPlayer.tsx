@@ -11,6 +11,16 @@ interface VideoPlayerProps {
   badge: string;
 }
 
+function getDriveFileId(src: string): string | null {
+  const fileMatch = src.match(/drive\.google\.com\/file\/d\/([^/?]+)/);
+  if (fileMatch) return fileMatch[1];
+  if (/drive\.google\.com|drive\.usercontent\.google\.com/.test(src)) {
+    const idMatch = src.match(/[?&]id=([^&]+)/);
+    return idMatch?.[1] ?? null;
+  }
+  return null;
+}
+
 function captureFrame(video: HTMLVideoElement): string | null {
   if (!video.videoWidth || !video.videoHeight) return null;
   const canvas = document.createElement("canvas");
@@ -30,10 +40,24 @@ export default function VideoPlayer({
   subtitle,
   badge,
 }: VideoPlayerProps) {
+  const driveFileId = getDriveFileId(src);
+  const drivePreviewSrc = driveFileId
+    ? `https://drive.google.com/file/d/${driveFileId}/preview`
+    : null;
+  const driveThumbnailSrc = driveFileId
+    ? `https://lh3.googleusercontent.com/d/${driveFileId}=w1920`
+    : null;
   const [playing, setPlaying] = useState(false);
-  const [thumbnail, setThumbnail] = useState<string | null>(null);
+  const [thumbnail, setThumbnail] = useState<string | null>(driveThumbnailSrc);
 
   useEffect(() => {
+    if (driveThumbnailSrc) {
+      setThumbnail(driveThumbnailSrc);
+      return;
+    }
+
+    setThumbnail(null);
+
     const video = document.createElement("video");
     video.muted = true;
     video.playsInline = true;
@@ -61,18 +85,28 @@ export default function VideoPlayer({
       video.removeEventListener("seeked", onSeeked);
       video.src = "";
     };
-  }, [src, thumbnailTime]);
+  }, [src, thumbnailTime, driveThumbnailSrc]);
 
   return (
     <div className="relative w-full aspect-video bg-[#141414] rounded-2xl overflow-hidden">
       {playing ? (
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src={src}
-          autoPlay
-          controls
-          playsInline
-        />
+        drivePreviewSrc ? (
+          <iframe
+            className="absolute inset-0 w-full h-full border-0"
+            src={drivePreviewSrc}
+            title={title}
+            allow="autoplay; encrypted-media; fullscreen"
+            allowFullScreen
+          />
+        ) : (
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            src={src}
+            autoPlay
+            controls
+            playsInline
+          />
+        )
       ) : (
         <button
           className="absolute inset-0 w-full h-full cursor-pointer group"
@@ -84,6 +118,7 @@ export default function VideoPlayer({
               src={thumbnail}
               alt=""
               className="absolute inset-0 w-full h-full object-cover"
+              referrerPolicy="no-referrer"
               aria-hidden
             />
           )}

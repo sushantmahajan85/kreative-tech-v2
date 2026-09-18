@@ -105,6 +105,7 @@ export default function ShopifyPage() {
 
           <FadeUp delay={0.1}>
             <VideoPlayer
+              src="https://drive.google.com/file/d/18LXtGcsWnC3t0YT9Sjhp4Em2TlL62HL8/view"
               title="Shopify Store — Full Build Walkthrough"
               subtitle="From design to first sale in 10 days"
               badge="▶ Watch Now"
