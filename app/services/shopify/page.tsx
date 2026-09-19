@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
 import VideoPlayer from "@/components/VideoPlayer";
-import allProjects from "@/data/projects.json";
+import { getProjects } from "@/lib/projects";
 
 const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20want%20a%20Shopify%20store.%20Can%20you%20share%20a%20quote%3F";
 const syne = { fontFamily: "var(--font-syne)" };
@@ -55,7 +55,7 @@ function IGReview({ handle, message }: { handle: string; message: string }) {
   );
 }
 
-const portfolio = allProjects.projects.filter((p) => p.categories.includes("shopify"));
+const portfolio = getProjects("shopify");
 
 const features = [
   { icon: "🎨", title: "Custom Shopify Theme", desc: "100% custom design — no paid templates. Built to match your brand identity and convert Indian shoppers." },

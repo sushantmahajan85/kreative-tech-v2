@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
 import VideoPlayer from "@/components/VideoPlayer";
-import allProjects from "@/data/projects.json";
+import { getProjects } from "@/lib/projects";
 
 const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20want%20to%20build%20a%20mobile%20app.%20Can%20you%20share%20a%20quote%3F";
 const syne = { fontFamily: "var(--font-syne)" };
@@ -58,7 +58,7 @@ const features = [
   { icon: "🚀", title: "App Store Submission", desc: "We handle Play Store and App Store submission, metadata, screenshots, and review cycle." },
 ];
 
-const portfolio = allProjects.projects.filter((p) => p.categories.includes("app-development"));
+const portfolio = getProjects("app-development");
 
 export default function AppDevPage() {
   return (

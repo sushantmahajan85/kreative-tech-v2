@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface VideoPlayerProps {
   src?: string;
@@ -11,6 +11,10 @@ interface VideoPlayerProps {
   badge: string;
 }
 
+const LOCAL_DRIVE_VIDEOS: Record<string, string> = {
+  "18LXtGcsWnC3t0YT9Sjhp4Em2TlL62HL8": "/videos/shopify-walkthrough.mp4",
+};
+
 function getDriveFileId(src: string): string | null {
   const fileMatch = src.match(/drive\.google\.com\/file\/d\/([^/?]+)/);
   if (fileMatch) return fileMatch[1];
@@ -19,6 +23,15 @@ function getDriveFileId(src: string): string | null {
     return idMatch?.[1] ?? null;
   }
   return null;
+}
+
+function getPlayableSrc(src: string): string {
+  const driveFileId = getDriveFileId(src);
+  if (!driveFileId) return src;
+  return (
+    LOCAL_DRIVE_VIDEOS[driveFileId] ??
+    `https://drive.usercontent.google.com/download?id=${driveFileId}&export=download&confirm=t`
+  );
 }
 
 function captureFrame(video: HTMLVideoElement): string | null {
@@ -40,10 +53,9 @@ export default function VideoPlayer({
   subtitle,
   badge,
 }: VideoPlayerProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const driveFileId = getDriveFileId(src);
-  const drivePreviewSrc = driveFileId
-    ? `https://drive.google.com/file/d/${driveFileId}/preview`
-    : null;
+  const playableSrc = getPlayableSrc(src);
   const driveThumbnailSrc = driveFileId
     ? `https://lh3.googleusercontent.com/d/${driveFileId}=w1920`
     : null;
@@ -61,8 +73,8 @@ export default function VideoPlayer({
     const video = document.createElement("video");
     video.muted = true;
     video.playsInline = true;
-    video.preload = "auto";
-    video.src = src;
+    video.preload = "metadata";
+    video.src = playableSrc;
 
     const onSeeked = () => {
       const frame = captureFrame(video);
@@ -85,32 +97,42 @@ export default function VideoPlayer({
       video.removeEventListener("seeked", onSeeked);
       video.src = "";
     };
-  }, [src, thumbnailTime, driveThumbnailSrc]);
+  }, [playableSrc, thumbnailTime, driveThumbnailSrc]);
+
+  const startPlayback = async () => {
+    const video = videoRef.current;
+    if (!video) return;
+    setPlaying(true);
+    video.setAttribute("playsinline", "true");
+    video.setAttribute("webkit-playsinline", "true");
+    try {
+      await video.play();
+    } catch {
+      // Native controls stay visible so the user can start playback if the browser blocks it.
+    }
+  };
 
   return (
     <div className="relative w-full aspect-video bg-[#141414] rounded-2xl overflow-hidden">
-      {playing ? (
-        drivePreviewSrc ? (
-          <iframe
-            className="absolute inset-0 w-full h-full border-0"
-            src={drivePreviewSrc}
-            title={title}
-            allow="autoplay; encrypted-media; fullscreen"
-            allowFullScreen
-          />
-        ) : (
-          <video
-            className="absolute inset-0 w-full h-full object-cover"
-            src={src}
-            autoPlay
-            controls
-            playsInline
-          />
-        )
-      ) : (
+      <video
+        ref={videoRef}
+        className="absolute inset-0 w-full h-full object-cover"
+        src={playableSrc}
+        poster={thumbnail ?? undefined}
+        playsInline
+        preload="metadata"
+        controls={playing}
+        controlsList="nodownload"
+        onPlay={() => setPlaying(true)}
+        onPause={(event) => {
+          if (event.currentTarget.ended) setPlaying(false);
+        }}
+      />
+      {!playing && (
         <button
+          type="button"
           className="absolute inset-0 w-full h-full cursor-pointer group"
-          onClick={() => setPlaying(true)}
+          onClick={startPlayback}
           aria-label={title}
         >
           {thumbnail && (
@@ -142,7 +164,7 @@ export default function VideoPlayer({
                 }}
               />
             </div>
-            <div className="text-center">
+            <div className="text-center px-4">
               <div className="text-white font-semibold text-sm">{title}</div>
               <div className="text-white/60 text-xs mt-1">{subtitle}</div>
             </div>

@@ -6,11 +6,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
 import VideoPlayer from "@/components/VideoPlayer";
-import allProjects from "@/data/projects.json";
+import { getProjects } from "@/lib/projects";
 
 const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20need%20a%20website%20built.%20Can%20you%20share%20a%20quote%3F";
 const syne = { fontFamily: "var(--font-syne)" };
-const portfolio = allProjects.projects.filter((p) => p.categories.includes("web-development"));
+const portfolio = getProjects("web-development");
 
 const features = [
   { icon: "⚡", title: "Fast-Loading & SEO-Ready", desc: "Core Web Vitals optimised. 90+ PageSpeed scores. Google-friendly from day one." },

@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
 import CountUp from "@/components/CountUp";
 import VideoPlayer from "@/components/VideoPlayer";
-import allProjects from "@/data/projects.json";
+import { getProjects } from "@/lib/projects";
 
 const WA_LINK = "https://wa.me/919082706169?text=Hi%2C%20I%20am%20interested%20in%20your%20services.";
 const WA_QUOTE = "https://wa.me/919082706169?text=Hi%2C%20I%20want%20to%20discuss%20a%20project%20and%20get%20a%20quote.";
@@ -17,7 +17,7 @@ const syne = { fontFamily: "var(--font-syne), 'Syne', system-ui, sans-serif" };
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const portfolio = allProjects.projects.filter((p) => p.categories.includes("home"));
+const portfolio = getProjects("home");
 
 const services = [
   { icon: "🌐", title: "Website Design & Development", desc: "Mobile-first, SEO-optimised websites that load in under 2 seconds and convert visitors into leads.", href: "/services/web-development/" },

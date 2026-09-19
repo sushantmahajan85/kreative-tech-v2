@@ -5,12 +5,12 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
-import allProjects from "@/data/projects.json";
+import { getProjects } from "@/lib/projects";
 
 const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20similar%20project.";
 const syne = { fontFamily: "var(--font-syne)" };
 
-const projects = allProjects.projects.filter((p) => p.categories.includes("portfolio"));
+const projects = getProjects("portfolio");
 
 export default function PortfolioPage() {
   return (
@@ -36,38 +36,21 @@ export default function PortfolioPage() {
           <FadeUpGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {projects.map((p) => (
               <FadeItem key={p.title}>
-                {(p.link && p.link !== "#") ? (
-                  <a href={p.link} target="_blank" rel="noopener noreferrer"
-                    className="group block bg-[#F7F4EE] border border-[rgba(20,20,20,0.08)] rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(20,20,20,0.1)] transition-all duration-300 h-full">
-                    <div className="relative h-52 overflow-hidden flex items-center justify-center" style={{ background: p.color ?? "#EDE9E0" }}>
-                      {p.image
-                        ? <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
-                        : <span className="text-5xl font-extrabold text-white/20 tracking-tight" style={syne}>{p.title.split(" ")[0].toUpperCase()}</span>
-                      }
-                      <div className="absolute top-3 right-3 bg-white/90 text-xs font-semibold text-[#141414] px-2.5 py-1 rounded-full">{p.tag}</div>
-                    </div>
-                    <div className="p-5">
-                      <span className="text-xs font-semibold text-[#E8561A] uppercase tracking-wide">{p.category}</span>
-                      <h3 className="font-bold text-[#141414] mt-1 mb-2 text-base" style={syne}>{p.title}</h3>
-                      <p className="text-sm text-[#5A5A5A] font-light leading-relaxed">{p.desc}</p>
-                      <div className="flex items-center gap-1 mt-3 text-xs font-semibold text-[#E8561A] group-hover:gap-2 transition-all">
-                        View live site <span className="group-hover:translate-x-0.5 transition-transform inline-block">→</span>
-                      </div>
-                    </div>
-                  </a>
-                ) : (
-                  <div className="bg-[#F7F4EE] border border-[rgba(20,20,20,0.08)] rounded-2xl overflow-hidden h-full">
-                    <div className="relative h-52 overflow-hidden" style={{ background: p.color ?? "#EDE9E0" }}>
-                      <Image src={p.image} alt={p.title} fill className="object-cover" unoptimized />
-                      <div className="absolute top-3 right-3 bg-white/90 text-xs font-semibold text-[#141414] px-2.5 py-1 rounded-full">{p.tag}</div>
-                    </div>
-                    <div className="p-5">
-                      <span className="text-xs font-semibold text-[#E8561A] uppercase tracking-wide">{p.category}</span>
-                      <h3 className="font-bold text-[#141414] mt-1 mb-2 text-base" style={syne}>{p.title}</h3>
-                      <p className="text-sm text-[#5A5A5A] font-light leading-relaxed">{p.desc}</p>
+                <a href={p.link} target="_blank" rel="noopener noreferrer"
+                  className="group block bg-[#F7F4EE] border border-[rgba(20,20,20,0.08)] rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(20,20,20,0.1)] transition-all duration-300 h-full">
+                  <div className="relative h-52 overflow-hidden flex items-center justify-center" style={{ background: p.color ?? "#EDE9E0" }}>
+                    <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
+                    <div className="absolute top-3 right-3 bg-white/90 text-xs font-semibold text-[#141414] px-2.5 py-1 rounded-full">{p.tag}</div>
+                  </div>
+                  <div className="p-5">
+                    <span className="text-xs font-semibold text-[#E8561A] uppercase tracking-wide">{p.category}</span>
+                    <h3 className="font-bold text-[#141414] mt-1 mb-2 text-base" style={syne}>{p.title}</h3>
+                    <p className="text-sm text-[#5A5A5A] font-light leading-relaxed">{p.desc}</p>
+                    <div className="flex items-center gap-1 mt-3 text-xs font-semibold text-[#E8561A] group-hover:gap-2 transition-all">
+                      View live site <span className="group-hover:translate-x-0.5 transition-transform inline-block">→</span>
                     </div>
                   </div>
-                )}
+                </a>
               </FadeItem>
             ))}
           </FadeUpGroup>

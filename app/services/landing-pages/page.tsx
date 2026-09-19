@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
 import VideoPlayer from "@/components/VideoPlayer";
-import allProjects from "@/data/projects.json";
+import { getProjects } from "@/lib/projects";
 
 const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20need%20a%20landing%20page%20for%20my%20Instagram%20Ads.%20Can%20you%20help%3F";
 const syne = { fontFamily: "var(--font-syne)" };
@@ -49,7 +49,7 @@ function IGReview({ handle, message }: { handle: string; message: string }) {
   );
 }
 
-const portfolio = allProjects.projects.filter((p) => p.categories.includes("landing-pages"));
+const portfolio = getProjects("landing-pages");
 
 const features = [
   { icon: "⚡", title: "Sub-3 Second Load Time", desc: "Google penalises slow pages. We build for speed — every landing page scores 90+ on PageSpeed." },

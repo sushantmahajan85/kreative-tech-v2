@@ -6,11 +6,11 @@ import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
 import VideoPlayer from "@/components/VideoPlayer";
 import CountUp from "@/components/CountUp";
 import Image from "next/image";
-import allProjects from "@/data/projects.json";
+import { getProjects } from "@/lib/projects";
 
 const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20need%20UI%2FUX%20Design%20services.%20Can%20you%20share%20a%20quote%3F";
 
-const portfolio = allProjects.projects.filter((p) => p.categories.includes("ui-ux"));
+const portfolio = getProjects("ui-ux");
 const syne = { fontFamily: "var(--font-syne)" };
 
 const heroStats: Array<{ val?: string; to?: number; suffix?: string; lbl: string }> = [

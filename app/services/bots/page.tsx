@@ -6,11 +6,11 @@ import FadeUp, { FadeUpGroup, FadeItem } from "@/components/FadeUp";
 import VideoPlayer from "@/components/VideoPlayer";
 import CountUp from "@/components/CountUp";
 import Image from "next/image";
-import allProjects from "@/data/projects.json";
+import { getProjects } from "@/lib/projects";
 
 const WA = "https://wa.me/919082706169?text=Hi%2C%20I%20need%20a%20WhatsApp%20or%20Telegram%20bot.%20Can%20you%20share%20a%20quote%3F";
 
-const portfolio = allProjects.projects.filter((p) => p.categories.includes("bots"));
+const portfolio = getProjects("bots");
 const syne = { fontFamily: "var(--font-syne)" };
 
 const heroStats: Array<{ val?: string; to?: number; suffix?: string; lbl: string }> = [
@@ -114,7 +114,7 @@ export default function BotsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      {portfolio.length > 0 && <section className="py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">
           <FadeUp className="mb-12">
             <span className="text-xs font-semibold text-[#E8561A] uppercase tracking-widest block mb-3">Our Work</span>
@@ -141,7 +141,7 @@ export default function BotsPage() {
             ))}
           </FadeUpGroup>
         </div>
-      </section>
+      </section>}
 
       <section className="py-20 bg-[#F7F4EE]">
         <div className="max-w-[1280px] mx-auto px-5 md:px-8">

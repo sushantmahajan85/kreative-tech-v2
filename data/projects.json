@@ -1,6 +1,116 @@
 {
   "projects": [
     {
+      "id": "chaaya-fashion",
+      "title": "Chaaya Fashion",
+      "desc": "Women's ethnic wear store for cotton kurti sets — mobile-first collections, festive sale flows, and easy size guidance.",
+      "image": "/assets/projects/chaaya.png",
+      "color": "#F4E8E0",
+      "tag": "Shopify",
+      "category": "Ethnic Wear",
+      "link": "https://chaayafashion.com/",
+      "categories": ["home", "portfolio", "shopify", "web-development", "ui-ux"]
+    },
+    {
+      "id": "meenakaari-priyanka",
+      "title": "Meenakaari by Priyanka",
+      "desc": "Luxury saree and festive wear boutique — category merchandising, lookbook-style product pages, and wedding-ready collections.",
+      "image": "/assets/projects/meenakaari.png",
+      "color": "#F6E8D8",
+      "tag": "Shopify",
+      "category": "Luxury Sarees",
+      "link": "https://meenakaaribypriyanka.com/",
+      "categories": ["home", "portfolio", "shopify", "web-development", "ui-ux"]
+    },
+    {
+      "id": "pyari-jewellery",
+      "title": "Pyari",
+      "desc": "18K gold-plated anti-tarnish jewellery — refined product photography, everyday-luxury copy, and a clean conversion-focused store.",
+      "image": "/assets/projects/pyari.png",
+      "color": "#F4E7C8",
+      "tag": "Shopify",
+      "category": "Jewellery Brand",
+      "link": "https://pyari.in/",
+      "categories": ["home", "portfolio", "shopify", "web-development", "ui-ux"]
+    },
+    {
+      "id": "odoluxe",
+      "title": "Odoluxe",
+      "desc": "Premium men's leather wallets, belts, and travel accessories — artisan storytelling and a polished DTC shopping experience.",
+      "image": "/assets/projects/odoluxe.png",
+      "color": "#3B2418",
+      "tag": "Shopify",
+      "category": "Leather Goods",
+      "link": "https://www.odoluxe.com/",
+      "categories": ["home", "portfolio", "shopify", "web-development", "ui-ux"]
+    },
+    {
+      "id": "real-veggies",
+      "title": "Real Veggies",
+      "desc": "Vacuum-cooked vegetable chips brand — flavour-first merchandising, clean-snacking story, and a high-converting D2C store.",
+      "image": "/assets/projects/realveggies.png",
+      "color": "#1F3A16",
+      "tag": "Shopify",
+      "category": "D2C Snacks",
+      "link": "https://realveggies.in/",
+      "categories": ["home", "portfolio", "shopify", "web-development", "ui-ux"]
+    },
+    {
+      "id": "nutty-harvest",
+      "title": "Nutty Harvest",
+      "desc": "Natural peanut butter brand — bold product hero, flavour variants, and a simple shop flow built for repeat grocery orders.",
+      "image": "/assets/projects/nuttyharvest.png",
+      "color": "#1E4D2B",
+      "tag": "Shopify",
+      "category": "D2C Food",
+      "link": "https://nuttyharvest.in/",
+      "categories": ["home", "portfolio", "shopify", "web-development"]
+    },
+    {
+      "id": "sattvique-naturals",
+      "title": "Sattvique Naturals",
+      "desc": "Handcrafted natural soaps and baby-care store — category-led browsing, ingredient-first copy, and a calm wellness brand feel.",
+      "image": "/assets/projects/sattvique.png",
+      "color": "#16382C",
+      "tag": "Shopify",
+      "category": "Skincare",
+      "link": "https://sattviquenaturals.com/",
+      "categories": ["portfolio", "shopify", "web-development", "ui-ux"]
+    },
+    {
+      "id": "30-days-coffee",
+      "title": "30 Days Coffee Roasters",
+      "desc": "Small-batch coffee roastery — taste-based collections, roast-date freshness story, and an easy path from first bag to subscription.",
+      "image": "/assets/projects/coffee.png",
+      "color": "#3A2A1C",
+      "tag": "Shopify",
+      "category": "Specialty Coffee",
+      "link": "https://30dayscoffeeroasters.com/",
+      "categories": ["portfolio", "shopify", "web-development"]
+    },
+    {
+      "id": "artycera",
+      "title": "ArtyCera",
+      "desc": "Handmade ceramic kitchenware and home décor — artisan product stories, gift collections, and a warm everyday-living storefront.",
+      "image": "/assets/projects/artycera.png",
+      "color": "#EFE8DC",
+      "tag": "Shopify",
+      "category": "Home & Decor",
+      "link": "https://artycera.com/",
+      "categories": ["portfolio", "shopify", "web-development", "ui-ux"]
+    },
+    {
+      "id": "chitrakar-carpets",
+      "title": "Chitrakar Carpets",
+      "desc": "Bespoke handmade rugs and carpets — collection-led storytelling, consultation CTAs, and a premium interior-design brand site.",
+      "image": "/assets/projects/chitrakar.png",
+      "color": "#E8E2D6",
+      "tag": "Shopify",
+      "category": "Home & Interiors",
+      "link": "https://chitrakarcarpets.com/",
+      "categories": ["portfolio", "shopify", "web-development", "ui-ux"]
+    },
+    {
       "id": "fourmula-ai",
       "title": "Fourmula AI",
       "desc": "AI product photography platform — cinematic 3D-rendered hero visuals, scroll-triggered animations, and a high-converting premium dark layout.",
@@ -9,7 +119,7 @@
       "tag": "3D Website",
       "category": "AI SaaS",
       "link": "https://fourmula.ai/",
-      "categories": ["home", "portfolio", "landing-pages", "web-development", "ui-ux"]
+      "categories": ["portfolio", "landing-pages", "web-development", "ui-ux"]
     },
     {
       "id": "mprofy-platform",
@@ -20,19 +130,7 @@
       "tag": "Web3 Platform",
       "category": "Web App",
       "link": "https://mprofy.com/",
-      "categories": ["home", "portfolio", "web-development", "ui-ux"]
-    },
-    {
-      "id": "boldo-doctor-app",
-      "title": "Boldo Doctor App",
-      "desc": "Flutter-built telemedicine app with doctor appointment booking, digital health records, patient profiles, and secure video consultations.",
-      "image": null,
-      "color": "#0A3D5E",
-      "tag": "Telemedicine",
-      "category": "App Development",
-      "link": "https://play.google.com/store/apps/details?id=py.com.psa.boldo",
-      "playStore": true,
-      "categories": ["home", "portfolio", "app-development", "ui-ux"]
+      "categories": ["portfolio", "web-development", "ui-ux"]
     },
     {
       "id": "maguire-shoes",
@@ -43,40 +141,18 @@
       "tag": "Shopify",
       "category": "D2C E-commerce",
       "link": "https://maguireshoes.com/",
-      "categories": ["home", "portfolio", "shopify"]
+      "categories": ["portfolio"]
     },
     {
       "id": "solace-jewellery",
       "title": "Solace Jewellery",
       "desc": "Hypoallergenic jewellery store — allergy certifications, automated review imports, waterproof product badges, and lifetime guarantee messaging.",
-      "image": "https://image.thum.io/get/width/800/https://solacejewellery.co.uk/",
+      "image": "/assets/solacejewellery.png",
       "color": "#1A1A2E",
       "tag": "Shopify",
       "category": "Jewellery Brand",
       "link": "https://solacejewellery.co.uk/",
-      "categories": ["home", "portfolio", "shopify"]
-    },
-    {
-      "id": "grabzy-platform",
-      "title": "Grabzy Platform",
-      "desc": "Feature-rich web application with real-time data updates, a modern dashboard UI, and scalable microservice architecture.",
-      "image": "/images/grabzy.JPG",
-      "color": "#1C1C2E",
-      "tag": "Web App",
-      "category": "Web App",
-      "link": "#",
-      "categories": ["web-development", "portfolio"]
-    },
-    {
-      "id": "localmention-saas",
-      "title": "LocalMention SaaS",
-      "desc": "Review management SaaS with multi-location analytics dashboard, automated response workflows, and Google Business integration.",
-      "image": "/images/localmention.JPG",
-      "color": "#0D2137",
-      "tag": "SaaS",
-      "category": "Review SaaS",
-      "link": "#",
-      "categories": ["web-development", "portfolio"]
+      "categories": ["portfolio"]
     },
     {
       "id": "zimyo-hr",
@@ -110,267 +186,6 @@
       "category": "LegalTech SaaS",
       "link": "https://www.leegality.com",
       "categories": ["web-development", "portfolio", "cloud-devops"]
-    },
-    {
-      "id": "clinicea",
-      "title": "Clinicea",
-      "desc": "End-to-end clinic management — patient EMR, appointment scheduling, billing automation, and doctor workflow tools.",
-      "image": "https://image.thum.io/get/width/800/https://www.clinicea.com/",
-      "color": "#0A3D5E",
-      "tag": "Healthcare SaaS",
-      "category": "Healthcare SaaS",
-      "link": "https://www.clinicea.com/",
-      "categories": ["app-development", "portfolio", "erp", "ui-ux"]
-    },
-    {
-      "id": "superprocure",
-      "title": "SuperProcure",
-      "desc": "Enterprise logistics platform with real-time shipment tracking, vendor coordination, and analytics for supply chain operations.",
-      "image": "https://image.thum.io/get/width/800/https://superprocure.com/",
-      "color": "#0D1A2E",
-      "tag": "Logistics SaaS",
-      "category": "Logistics SaaS",
-      "link": "https://superprocure.com/",
-      "categories": ["app-development", "portfolio", "erp", "cloud-devops"]
-    },
-    {
-      "id": "dawn-health",
-      "title": "Dawn Health",
-      "desc": "AI-powered sleep therapy app using CBT-I protocols with personalised session tracking and a minimalist high-conversion mobile UI.",
-      "image": "https://image.thum.io/get/width/800/https://www.dawn.health/",
-      "color": "#0A0E1A",
-      "tag": "Health App",
-      "category": "AI Health App",
-      "link": "https://www.dawn.health/",
-      "categories": ["app-development", "portfolio", "ui-ux"]
-    },
-    {
-      "id": "vyapar-app",
-      "title": "Vyapar App",
-      "desc": "GST billing and accounting for SMEs — inventory management, digital ledger, payment tracking, and real-time financial analytics.",
-      "image": "https://image.thum.io/get/width/800/https://vyaparapp.in/",
-      "color": "#0D1E3A",
-      "tag": "Business App",
-      "category": "Business App",
-      "link": "https://vyaparapp.in/",
-      "categories": ["app-development", "portfolio", "erp"]
-    },
-    {
-      "id": "buki-vista",
-      "title": "Buki Vista App",
-      "desc": "Android marketplace app built in Flutter — real-time product listings, in-app chat, location-based search, and Razorpay payments.",
-      "image": "/images/portfolio-10.png",
-      "color": "#1A2E1A",
-      "tag": "Marketplace App",
-      "category": "Mobile App",
-      "link": "https://play.google.com/store/apps/details?id=com.bukivista.bv_app",
-      "playStore": true,
-      "categories": ["app-development", "portfolio", "ui-ux"]
-    },
-    {
-      "id": "aadyaa-silver",
-      "title": "Aadyaa Silver",
-      "desc": "Premium 92.5 certified silver jewellery — handcrafted collections, niche India audience targeting, and mobile-first product browsing.",
-      "image": "https://image.thum.io/get/width/800/https://aadyaa.com/",
-      "color": "#1A1A1A",
-      "tag": "Jewellery",
-      "category": "Jewellery",
-      "link": "https://aadyaa.com/",
-      "categories": ["shopify", "portfolio"]
-    },
-    {
-      "id": "knyamed",
-      "title": "Knaya Med",
-      "desc": "Medical scrubs and healthcare apparel with niche B2B positioning and category-wise browsing for doctors and nurses.",
-      "image": "https://image.thum.io/get/width/800/https://www.knyamed.com/",
-      "color": "#0A2437",
-      "tag": "Medical Apparel",
-      "category": "Healthcare Apparel",
-      "link": "https://www.knyamed.com/",
-      "categories": ["shopify", "portfolio"]
-    },
-    {
-      "id": "maison-miru",
-      "title": "Maison Miru",
-      "desc": "Boutique modular jewellery with a 'build your own' product system, high-fidelity visuals, and a premium DTC shopping flow.",
-      "image": "https://image.thum.io/get/width/800/https://www.maisonmiru.com/",
-      "color": "#1C1410",
-      "tag": "Modular Jewellery",
-      "category": "Modular Jewellery",
-      "link": "https://www.maisonmiru.com/",
-      "categories": ["shopify", "portfolio"]
-    },
-    {
-      "id": "kathmandu-outdoor",
-      "title": "Kathmandu Outdoor",
-      "desc": "Full e-commerce store for outdoor and adventure gear — custom product filtering, bundle offers, and integrated pan-India shipping.",
-      "image": "/images/kathMandu.png",
-      "color": "#1A2E1A",
-      "tag": "Outdoor Gear",
-      "category": "E-commerce",
-      "link": "https://www.kathmanduoutdoor.com/",
-      "categories": ["shopify", "portfolio"]
-    },
-    {
-      "id": "stealtho-store",
-      "title": "Stealtho Store",
-      "desc": "Premium sneakers and streetwear marketplace with lookbook-style collection pages and frictionless WhatsApp checkout.",
-      "image": "/images/steathoStore.png",
-      "color": "#141414",
-      "tag": "Streetwear",
-      "category": "Shopify Store",
-      "link": "https://stealtho.store/",
-      "categories": ["shopify", "portfolio"]
-    },
-    {
-      "id": "scalewell",
-      "title": "Scalewell",
-      "desc": "Wellness business coaching page — bold headline, pain-point copy, video CTA, and testimonials built for Indian SME audiences.",
-      "image": "https://image.thum.io/get/width/800/https://scalewell.in/",
-      "tag": "Business Coaching",
-      "category": "Coaching",
-      "link": "https://scalewell.in/",
-      "categories": ["landing-pages", "portfolio"]
-    },
-    {
-      "id": "vivek-advantage",
-      "title": "Vivek Advantage",
-      "desc": "Freelance Meta Ads consultant page — ROI-first copy, ₹ ad spend credibility, pain-point sections, and direct book-a-call CTA.",
-      "image": "https://image.thum.io/get/width/800/https://vivekadvantage.in/",
-      "tag": "Consultant Page",
-      "category": "Consultant",
-      "link": "https://vivekadvantage.in/",
-      "categories": ["landing-pages", "portfolio"]
-    },
-    {
-      "id": "base-shgala",
-      "title": "Base Shgala",
-      "desc": "Indian entrepreneur and MSME business coach — bold transformation copy, programme showcase, and consultation CTA flow.",
-      "image": "https://image.thum.io/get/width/800/https://baseshgala.com/",
-      "tag": "MSME Coaching",
-      "category": "MSME Coach",
-      "link": "https://baseshgala.com/",
-      "categories": ["landing-pages", "portfolio"]
-    },
-    {
-      "id": "relace-ai",
-      "title": "Relace AI",
-      "desc": "AI infrastructure startup — cinematic 3D dark visuals, motion typography, rapid-scan modular sections, and bold above-the-fold.",
-      "image": "https://image.thum.io/get/width/800/https://relace.ai/",
-      "color": "#0A0A1A",
-      "tag": "AI Startup",
-      "category": "AI Startup",
-      "link": "https://relace.ai/",
-      "categories": ["landing-pages", "portfolio", "ui-ux"]
-    },
-    {
-      "id": "henry-heffernan",
-      "title": "Henry Heffernan",
-      "desc": "Personal portfolio website for a software developer — fast-loading, clean design with strong above-the-fold CTA and project showcase.",
-      "image": "/images/henry.png",
-      "tag": "Brand Page",
-      "category": "Portfolio Site",
-      "link": "https://henryheffernan.com/",
-      "categories": ["landing-pages", "portfolio"]
-    },
-    {
-      "id": "wati-bot",
-      "title": "WATI WhatsApp CRM",
-      "desc": "WhatsApp Business API integration for a D2C brand — broadcast campaigns, abandoned cart recovery, and agent handoff automation.",
-      "image": "https://image.thum.io/get/width/800/https://www.wati.io/",
-      "color": "#075E54",
-      "tag": "WhatsApp Bot",
-      "category": "Bot Automation",
-      "link": "https://www.wati.io/",
-      "categories": ["bots", "portfolio"]
-    },
-    {
-      "id": "telegram-lead-bot",
-      "title": "Telegram Lead Bot",
-      "desc": "Custom Telegram bot for a coaching business — lead qualification flow, inline menus, Razorpay payment links, and Google Sheets CRM sync.",
-      "image": null,
-      "color": "#0088CC",
-      "tag": "Telegram Bot",
-      "category": "Lead Generation",
-      "link": "#",
-      "categories": ["bots", "portfolio"]
-    },
-    {
-      "id": "ecom-whatsapp-bot",
-      "title": "E-commerce Order Bot",
-      "desc": "WhatsApp order notification system for a Shopify store — order confirmation, shipping alerts, COD verification, and NPS collection.",
-      "image": null,
-      "color": "#1A3A1A",
-      "tag": "Shopify Bot",
-      "category": "E-commerce Automation",
-      "link": "#",
-      "categories": ["bots", "portfolio"]
-    },
-    {
-      "id": "ai-support-bot",
-      "title": "AI Customer Support Bot",
-      "desc": "GPT-powered WhatsApp chatbot for an EdTech company — FAQ auto-responses, intent detection, human escalation, and conversation analytics.",
-      "image": null,
-      "color": "#1A0A2E",
-      "tag": "AI Chatbot",
-      "category": "AI Support",
-      "link": "#",
-      "categories": ["bots", "portfolio"]
-    },
-    {
-      "id": "aws-saas-infra",
-      "title": "Multi-tenant SaaS Infra",
-      "desc": "AWS-based multi-tenant architecture for a B2B SaaS — ECS Fargate, RDS Aurora, CloudFront CDN, and CI/CD via GitHub Actions.",
-      "image": null,
-      "color": "#0D1A2E",
-      "tag": "AWS Architecture",
-      "category": "Cloud Infrastructure",
-      "link": "#",
-      "categories": ["cloud-devops", "portfolio"]
-    },
-    {
-      "id": "k8s-migration",
-      "title": "Kubernetes Migration",
-      "desc": "Migrated a monolithic Node.js app to a Kubernetes cluster on GKE — zero-downtime rollouts, Helm charts, and automated scaling policies.",
-      "image": null,
-      "color": "#0A1F0A",
-      "tag": "DevOps",
-      "category": "Cloud Migration",
-      "link": "#",
-      "categories": ["cloud-devops", "portfolio"]
-    },
-    {
-      "id": "cicd-pipeline",
-      "title": "CI/CD Pipeline Setup",
-      "desc": "End-to-end CI/CD pipeline for a fintech startup — GitHub Actions, Docker, ECR, and blue-green deployments to AWS ECS.",
-      "image": null,
-      "color": "#1A0A0A",
-      "tag": "CI/CD",
-      "category": "DevOps",
-      "link": "#",
-      "categories": ["cloud-devops", "portfolio"]
-    },
-    {
-      "id": "erp-textile",
-      "title": "Textile ERP System",
-      "desc": "Custom ERP for a textile manufacturer — production planning, inventory tracking, GST invoicing, and supplier payment workflows.",
-      "image": null,
-      "color": "#2A1A0A",
-      "tag": "Manufacturing ERP",
-      "category": "ERP",
-      "link": "#",
-      "categories": ["erp", "portfolio"]
-    },
-    {
-      "id": "erp-restaurant",
-      "title": "Restaurant Management ERP",
-      "desc": "Centralised POS + inventory + staff scheduling ERP for a multi-outlet restaurant chain — table management and daily P&L reporting.",
-      "image": null,
-      "color": "#2A0A0A",
-      "tag": "Restaurant ERP",
-      "category": "ERP",
-      "link": "#",
-      "categories": ["erp", "portfolio"]
     }
   ]
 }
