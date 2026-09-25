@@ -51,23 +51,23 @@ export default function SaasPage() {
     <>
       <Navbar />
 
-      <section className="pt-16 bg-[#141414] overflow-hidden">
-        <div className="max-w-[1280px] mx-auto px-5 md:px-8 py-16 md:py-20">
+      <section className="pt-16 bg-[#F7F4EE]">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-8 py-14 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <FadeUp className="lg:col-span-5">
-              <div className="inline-flex items-center gap-2 border border-[rgba(232,86,26,0.35)] bg-[rgba(232,86,26,0.12)] text-[#E8561A] rounded-full px-4 py-1.5 text-xs font-semibold mb-6">
+              <div className="inline-flex items-center gap-2 bg-[#FDF0E8] text-[#E8561A] rounded-full px-4 py-1.5 text-xs font-semibold mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E8561A]" /> Our own product · KT CRM
               </div>
-              <h1 className="text-[clamp(34px,4.6vw,54px)] font-extrabold leading-[1.08] tracking-[-1.5px] text-white mb-5" style={syne}>
+              <h1 className="text-[clamp(34px,4.6vw,54px)] font-extrabold leading-[1.08] tracking-[-1.5px] text-[#141414] mb-5" style={syne}>
                 SaaS we build.<br />
                 <em className="not-italic text-[#E8561A]">SaaS we sell.</em>
               </h1>
-              <p className="text-base md:text-lg text-white/55 font-light leading-[1.75] mb-6 max-w-xl">
+              <p className="text-base md:text-lg text-[#5A5A5A] font-light leading-[1.75] mb-6 max-w-xl">
                 Watch KT CRM — the subscription product we designed, built, and run. Same stack we use to ship custom SaaS for founders who want recurring revenue.
               </p>
               <div className="flex flex-wrap gap-2 mb-8">
                 {["Pipelines", "WhatsApp follow-ups", "Team roles", "Monthly billing"].map((chip) => (
-                  <span key={chip} className="text-xs font-medium text-white/75 border border-white/12 bg-white/5 rounded-full px-3 py-1.5">
+                  <span key={chip} className="text-xs font-medium text-[#5A5A5A] border border-[rgba(20,20,20,0.1)] bg-white rounded-full px-3 py-1.5">
                     {chip}
                   </span>
                 ))}
@@ -78,44 +78,41 @@ export default function SaasPage() {
                   Build my SaaS →
                 </a>
                 <a href="#kt-crm-demo"
-                  className="flex items-center gap-2 border border-white/20 hover:bg-white hover:text-[#141414] text-white font-semibold px-7 py-3.5 rounded-full transition-all">
+                  className="flex items-center gap-2 border border-[rgba(20,20,20,0.18)] hover:bg-[#141414] hover:text-white text-[#141414] font-semibold px-7 py-3.5 rounded-full transition-all">
                   Watch KT CRM
                 </a>
               </div>
             </FadeUp>
 
             <FadeUp delay={0.1} className="lg:col-span-7">
-              <div id="kt-crm-demo" className="relative">
-                <div className="absolute -inset-4 rounded-[28px] bg-[#E8561A]/15 blur-2xl pointer-events-none" />
-                <div className="relative rounded-[22px] border border-white/10 bg-[#1C1C1C] p-2.5 shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
-                  <div className="flex items-center gap-2 px-3 pb-2.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
-                    <span className="ml-2 text-[11px] font-medium text-white/40 tracking-wide">kreativetech.in/kt-crm</span>
-                  </div>
-                  <VideoPlayer
-                    src="/videos/KT_crm-demo_compressed.mp4"
-                    title="KT CRM — Our SaaS Walkthrough"
-                    subtitle="Live product demo from the Kreative Tech stack"
-                    badge="▶ Product Demo"
-                  />
+              <div id="kt-crm-demo" className="relative rounded-[22px] border border-[rgba(20,20,20,0.08)] bg-white p-2.5 shadow-[0_16px_48px_rgba(20,20,20,0.08)]">
+                <div className="flex items-center gap-2 px-3 pb-2.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
+                  <span className="ml-2 text-[11px] font-medium text-[#5A5A5A] tracking-wide">kreativetech.in/kt-crm</span>
                 </div>
+                <VideoPlayer
+                  src="/videos/KT_crm-demo_compressed.mp4"
+                  title="KT CRM — Our SaaS Walkthrough"
+                  subtitle="Live product demo from the Kreative Tech stack"
+                  badge="▶ Product Demo"
+                />
               </div>
             </FadeUp>
           </div>
 
-          <FadeUp delay={0.15} className="grid grid-cols-3 gap-3 md:gap-5 mt-12">
+          <FadeUp delay={0.15} className="grid grid-cols-3 gap-3 md:gap-5 mt-10">
             {[
               { to: 12, suffix: "+", lbl: "SaaS shipped" },
               { val: "6–10 wks", lbl: "MVP timeline" },
               { val: "₹1.2L+", lbl: "Starting price" },
             ].map((s) => (
-              <div key={s.lbl} className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-4 md:px-5 md:py-5">
-                <div className="text-lg md:text-xl font-extrabold text-white leading-none" style={syne}>
+              <div key={s.lbl} className="rounded-2xl border border-[rgba(20,20,20,0.07)] bg-white px-4 py-4 md:px-5 md:py-5">
+                <div className="text-lg md:text-xl font-extrabold text-[#141414] leading-none" style={syne}>
                   {"to" in s && s.to !== undefined ? <CountUp to={s.to} suffix={s.suffix ?? ""} /> : s.val}
                 </div>
-                <div className="text-[11px] md:text-xs text-white/45 mt-1.5">{s.lbl}</div>
+                <div className="text-[11px] md:text-xs text-[#5A5A5A] mt-1.5">{s.lbl}</div>
               </div>
             ))}
           </FadeUp>
@@ -147,13 +144,13 @@ export default function SaasPage() {
               </div>
             </FadeItem>
             <FadeItem>
-              <div className="bg-[#141414] rounded-2xl p-8 h-full text-white">
+              <div className="bg-white rounded-2xl p-8 border border-[#E8561A]/25 shadow-[0_8px_32px_rgba(232,86,26,0.06)] h-full">
                 <div className="text-xs font-semibold text-[#E8561A] uppercase tracking-widest mb-3">Productised SaaS</div>
-                <h3 className="text-2xl font-bold mb-3" style={syne}>A product you can sell</h3>
-                <p className="text-sm text-white/60 font-light leading-relaxed mb-6">
+                <h3 className="text-2xl font-bold text-[#141414] mb-3" style={syne}>A product you can sell</h3>
+                <p className="text-sm text-[#5A5A5A] font-light leading-relaxed mb-6">
                   Need a sellable tool — CRM, booking, internal OS, or AI workflow? We package the product, billing, and marketing site so you can start charging.
                 </p>
-                <ul className="space-y-2.5 text-sm text-white/90">
+                <ul className="space-y-2.5 text-sm text-[#141414]">
                   {["Subscription-ready from launch", "Public site + app in one build", "Handover or we stay as product partner"].map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#E8561A] shrink-0" />
