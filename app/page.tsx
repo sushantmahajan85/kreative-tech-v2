@@ -24,6 +24,7 @@ const services = [
   { icon: "📱", title: "iOS & Android App Development", desc: "Custom mobile apps with Flutter or React Native. One codebase, both platforms, native performance.", href: "/services/app-development/" },
   { icon: "🛒", title: "Shopify E-commerce Stores", desc: "Complete Shopify stores with Indian payments, WhatsApp checkout, and conversion-focused design.", href: "/services/shopify/" },
   { icon: "⚙️", title: "ERP & Business Software", desc: "Automate operations — inventory, HR, billing, and reports — in one custom system built for your workflow.", href: "/services/erp/" },
+  { icon: "💼", title: "SaaS Products", desc: "We build and launch subscription products — custom SaaS for your idea, or a sellable tool with billing and dashboards.", href: "/services/saas/" },
   { icon: "🚀", title: "Landing Pages & Ad Funnels", desc: "High-converting landing pages built for Instagram/Google Ads. A/B tested, fast-loading, lead-capture ready.", href: "/services/landing-pages/" },
   { icon: "☁️", title: "Cloud & DevOps", desc: "Scalable cloud infrastructure on AWS, GCP, or Azure. Setup, migration, monitoring, and cost optimisation.", href: "/services/cloud-devops/" },
   { icon: "🎨", title: "UI/UX Design", desc: "User-centred design that looks stunning and converts. Wireframes, prototypes, and final design assets.", href: "/services/ui-ux/" },
@@ -605,7 +606,7 @@ export default function HomePage() {
                     <select value={formData.service} onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                       className="w-full bg-[rgba(255,255,255,0.07)] border border-[rgba(255,255,255,0.12)] focus:border-[#E8561A] rounded-xl px-4 py-3 text-white text-sm outline-none transition-colors cursor-pointer">
                       <option value="" className="bg-[#141414]">Select a service</option>
-                      {["Website Development", "Mobile App", "Shopify Store", "Landing Page", "ERP Solution", "Other"].map((s) => (
+                      {["Website Development", "Mobile App", "Shopify Store", "Landing Page", "ERP Solution", "SaaS Product", "Other"].map((s) => (
                         <option key={s} value={s} className="bg-[#141414]">{s}</option>
                       ))}
                     </select>

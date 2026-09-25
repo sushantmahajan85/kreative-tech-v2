@@ -119,7 +119,7 @@
       "tag": "3D Website",
       "category": "AI SaaS",
       "link": "https://fourmula.ai/",
-      "categories": ["portfolio", "landing-pages", "web-development", "ui-ux"]
+      "categories": ["portfolio", "landing-pages", "web-development", "ui-ux", "saas"]
     },
     {
       "id": "mprofy-platform",
@@ -130,7 +130,7 @@
       "tag": "Web3 Platform",
       "category": "Web App",
       "link": "https://mprofy.com/",
-      "categories": ["portfolio", "web-development", "ui-ux"]
+      "categories": ["portfolio", "web-development", "ui-ux", "saas"]
     },
     {
       "id": "maguire-shoes",
@@ -163,7 +163,7 @@
       "tag": "HR SaaS",
       "category": "HR Platform",
       "link": "https://zimyo.com",
-      "categories": ["web-development", "portfolio", "erp", "cloud-devops"]
+      "categories": ["web-development", "portfolio", "erp", "cloud-devops", "saas"]
     },
     {
       "id": "yocket",
@@ -174,7 +174,7 @@
       "tag": "EdTech Platform",
       "category": "EdTech",
       "link": "https://yocket.com",
-      "categories": ["web-development", "portfolio", "cloud-devops"]
+      "categories": ["web-development", "portfolio", "cloud-devops", "saas"]
     },
     {
       "id": "leegality",
@@ -185,7 +185,7 @@
       "tag": "LegalTech",
       "category": "LegalTech SaaS",
       "link": "https://www.leegality.com",
-      "categories": ["web-development", "portfolio", "cloud-devops"]
+      "categories": ["web-development", "portfolio", "cloud-devops", "saas"]
     }
   ]
 }

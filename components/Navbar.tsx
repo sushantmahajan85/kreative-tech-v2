@@ -11,6 +11,7 @@ const services = [
   { label: "Shopify Stores", href: "/services/shopify/" },
   { label: "Landing Pages", href: "/services/landing-pages/" },
   { label: "ERP Solutions", href: "/services/erp/" },
+  { label: "SaaS Products", href: "/services/saas/" },
   { label: "Cloud & DevOps", href: "/services/cloud-devops/" },
   { label: "UI/UX Design", href: "/services/ui-ux/" },
   { label: "WhatsApp Bots", href: "/services/bots/" },

@@ -311,6 +311,7 @@ export default function ContactPage() {
                         "Landing Page",
                         "Web Development",
                         "ERP Solution",
+                        "SaaS Product",
                         "Other",
                       ].map((s) => (
                         <option key={s}>{s}</option>
